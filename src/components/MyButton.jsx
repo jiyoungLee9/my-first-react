@@ -2,14 +2,14 @@
 
 const sampleButton = (props) => {
     const buttonStyle2 = {
-        padding:"16px 20px;",
-        backgroundColor : "#ff8800ff",
+        padding:"16px 24px;",
+        backgroundColor : "#010b97ff",
         color : "#fff",
         border : "none",
         borderRadius : "8px",
         cursor : "pointer",
-        fontSize : "20px",
-        lineHiehgt : "30px"
+        fontSize : "24px",
+        lineHiehgt : "36px"
     };
 
     return (
