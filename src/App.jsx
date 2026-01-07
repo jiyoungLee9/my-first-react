@@ -17,6 +17,7 @@ function App() {
     <div style={{ textAlign: "center", marginTop: "50px" }}>
       <h1>React 첫 화면입니다</h1>
       <p>아래 버튼을 클릭해보세요.</p>
+      <p>다시 수정 중입니다.</p>
       
       {/* 우리가 만든 컴포넌트 사용 
         label="클릭하세요" -> props.label로 전달됨
