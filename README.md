@@ -1,7 +1,6 @@
-# React + Vite
+# React first Project
 
-## React first PJT
-React 첫번째 프로젝트로 간단한 UI Base 파일모음
+## React UI Base 파일모음
 
 ### 소개
 분석 및 UX설계 단계 시 퍼블리셔(또는 프론트개발자)의 경우 UX 설계결과를 바탕으로 <br />
