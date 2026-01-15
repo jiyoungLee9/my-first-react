@@ -1,0 +1,47 @@
+@mixin ellips(){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;     
+}
+
+@mixin default-shadow(){
+    box-shadow: 0 0 0.8rem 0 rgba(0,0,0,0.08);  
+}
+
+@mixin layer-shadow(){
+    box-shadow: 0 0 0.8rem 0 rgba(0,0,0,0.15);  
+}
+
+@mixin default-trans( $target:null ){
+    @if ( $target ){
+        transition: #{$target} .35s ease-in-out;
+    }@else{
+        transition: all .35s ease-in-out;
+    }
+}
+
+@mixin layer-trans( $target:null ){
+    @if ( $target ){
+        transition: #{$target} .35s ease-in-out;
+    }@else{
+        transition: all .35s ease-in-out;
+    }
+}
+
+@mixin scroll-custom( $target_area ){
+    #{$target_area}::-webkit-scrollbar { width: 0.6rem; height:0.6rem;}     
+    #{$target_area}::-webkit-scrollbar-track { -webkit-border-radius: 0.3rem; border-radius: 0.3rem; background:#fff; }     
+    #{$target_area}::-webkit-scrollbar-thumb { -webkit-border-radius: 0.3rem; border-radius: 0.3rem; background:$clr_main; }     
+    #{$target_area}::-webkit-scrollbar-thumb:window-inactive { background: $clr_main; }
+    #{$target_area}::-webkit-scrollbar-button:start { background:transparent }
+    #{$target_area}::-webkit-scrollbar-button:end { background:transparent }   
+}
+
+@mixin font_pre( $target_weight ){
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'AppleGothic', sans-serif;
+    @if ( $target_weight ){        
+        font-weight:#{$target_weight};
+    }@else{
+        font-weight:400;   
+    }
+}

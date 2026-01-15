@@ -1,0 +1,11 @@
+@charset "utf-8";
+/*!
+    * @FileName : _build-set.scss
+    * @Date : 2025-01-15
+    * @작성자 : LEE JI YOUNG
+    * @설명 : vite를 통한 빌드 시 공통선언구문을 아예 지정한 scss /  컬러, mixin이 모여 있음
+    vite.config.js 에 선언함
+*/
+
+@import '_var_value';
+@import '_mixin';

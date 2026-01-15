@@ -1,0 +1,20 @@
+/* src/components/MyButton.module.scss */
+/* 기존처럼 복잡한 클래스명(.btn-primary-large)을 쓸 필요가 없습니다. */
+//@import "../assets/scss/_var_value.scss";
+
+//button
+.btn {
+    padding: 1.6rem 2.4rem;
+    background-color: $clr_greenblue;
+    color:#fff;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font-size: 2.0rem;
+    line-height: 3.0rem;
+    &:hover {
+        background-color: $clr_darkblue2;
+    }
+    .btn_txt {
+        font-weight: 600;
+    }
+}
