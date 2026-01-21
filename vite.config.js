@@ -10,7 +10,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "@/assets/scss/_build-set.scss";
+          @import "@/assets/scss/build-set.scss";
         `,
         api: 'modern-compiler' // Sass 최신 컴파일러 사용 (선택사항)
       }

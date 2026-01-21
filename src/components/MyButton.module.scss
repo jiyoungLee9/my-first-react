@@ -4,14 +4,14 @@
 //button
 .btn {
     padding: 1.6rem 2.4rem;
-    background-color: $clr_greenblue;
+    background-color: $clr_blue;
     color:#fff;
     border-radius: 0.8rem;
     cursor: pointer;
     font-size: 2.0rem;
     line-height: 3.0rem;
     &:hover {
-        background-color: $clr_darkblue2;
+        background-color: #004992;
     }
     .btn_txt {
         font-weight: 600;

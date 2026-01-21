@@ -1,6 +1,76 @@
 /* src/components/radioGroup.module.scss */
 
-//radiogroup
-.rdo_group {
+//radioGgroup
+.radioGroup {
+    margin-top:2.0rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:1.2rem;
+
+    & .radioItem {
+        display:block;
+
+        input[type="radio"]{
+            appearance: none;
+            width: 0;
+            height: 0;
+            position: absolute;
+            overflow:hidden;
+            & + label {
+                display: inline-flex;
+                gap:0 0.6rem;
+                cursor: pointer;
+                &::before {
+                    content:"";
+                    display: block;
+                    box-sizing: border-box;
+                    width:2.0rem;
+                    height:2.0rem;
+                    border-radius: 50% 50%;
+                    border:0.2rem solid $clr_inp_default;
+                    background-color:#fff;
+                }
+                & span {
+                    font-size:1.6rem;
+                    line-height:2.4rem;
+                    color:$clr_basic;
+                    font-size:400;
+                }
+
+            }
+
+            &:checked {
+                & + label {
+                     &::before {
+                        border:0.6rem solid  $clr_main;
+                     }
+                    & span {
+                        font-weight: 600;
+                    }                     
+                }
+            }
+
+            &:disabled {
+                & + label {
+                     &::before {
+                        border:0.2rem solid $clr_inp_disabled;
+                     }
+                    & span {
+                        color:$clr_inp_disText;
+                    }                     
+                }
+            }            
+
+        }
+    }
+
+    &.type_vertical {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
 }
+

@@ -76,12 +76,10 @@ caption.hdn { position:relative!important; text-indent:-100000px; font-size:0;} 
 
 //txt color
 $t_clr_list: (
-    'blue': $clr_point,
+    'blue': $clr_blue,
     'red': $clr_red,
     'yellow': $clr_yellow,
     'gray': $clr_darkgray,
-    'green': $clr_green,
-    'greenblue' : $clr_greenblue,
 );
 @each $name_c, $color_c in $t_clr_list {
     .tc_#{$name_c} { color : $color_c !important;}
@@ -140,7 +138,6 @@ body.is_loading {
         z-index:100;
     }    
 }
-
 
 //반응형 정의
 @media (min-width:1440px) { /* pc wide */ }
