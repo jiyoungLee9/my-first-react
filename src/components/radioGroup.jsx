@@ -1,4 +1,4 @@
-// src/components/radioGroup.jsx
+// src/components/RadioGroup.jsx
 import styles from './radioGroup.module.scss';
 
 // [Props 설명]
@@ -7,7 +7,7 @@ import styles from './radioGroup.module.scss';
 // 3. defaultValue: 처음에 선택되어 있을 값 (옵션)
 // 4. isType : 그룹가로형 구분
 
-const radioGroup = ({ name, itemList, defaultValue, isType }) => {
+const RadioGroup = ({ name, itemList, defaultValue, isType }) => {
     return (
         // className 다중화 정의
         //  isType 값에 "vertical"이 들어오면 다중 class "type_vertical"을 추가로 작성해 줍니다.
@@ -39,4 +39,4 @@ const radioGroup = ({ name, itemList, defaultValue, isType }) => {
     );
 };
 
-export default radioGroup;
+export default RadioGroup;

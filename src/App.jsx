@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useState } from 'react';
 import MyButton from './components/MyButton'; 
-import RadioGroup from './components/radioGroup';
+import RadioGroup from './components/RadioGroup';
 
 function App() {
 
