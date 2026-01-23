@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+/*!
+    * @FileName : _component.scss
+    * @Date : 2025-01-23
+    * @작성자 : LEE JI YOUNG
+    * @설명 : 컴포넌트 공통 요소
+*/
+
+/**********************************************************************************
+    text
+**********************************************************************************/
+.text_default {
+    font-size: $f_size;
+    line-height: $f_line;
+    color: $clr_basic;
+    @include font_pre(400);
+}
+.text_sub {
+    font-size: $f_size;
+    line-height: $f_line;
+    color: $clr_darkgray;
+    @include font_pre(400);
+}
+.text_primary {
+    font-size: $f_size;
+    line-height: $f_line;
+    color: $clr_main;
+    @include font_pre(400);
+}
+.text_bold {
+    font-size: $f_size;
+    line-height: $f_line;
+    color: $clr_basic;
+    @include font_pre(700);
+}

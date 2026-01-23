@@ -29,29 +29,36 @@ function App() {
             <h1>UI 컴포넌트 모음</h1>
 
             <div className={"container_box"}>
-                <h3>RadioGroup</h3>
-                <RadioGroup
-                    name="city"
-                    itemList={cityOptions}
-                    defaultValue="seoul"
-                    isType=""
-                >
-                </RadioGroup>
 
-                <hr className={"hr"} />
+                <h2>RadioGroup</h2>
+                
+                <section className={"section_box"} aria-labelledby="radio-heading1">
+                    <h3 id="radio-heading1">기본형</h3>
+                    <RadioGroup
+                        name="city"
+                        itemList={cityOptions}
+                        defaultValue="seoul"
+                        isType=""
+                    >
+                    </RadioGroup>                    
+                </section>
 
-                <RadioGroup
-                    name="sex"
-                    itemList={sexOption}
-                    defaultValue="F"
-                    isType="vertical"
-                >
-                </RadioGroup>
-
+                <section className={"section_box"} aria-labelledby="radio-heading2">
+                    <h3 id="radio-heading2">가로형</h3>
+                    <RadioGroup
+                        name="sex"
+                        itemList={sexOption}
+                        defaultValue="F"
+                        isType="vertical"
+                    >
+                    </RadioGroup>                  
+                </section>                
+                
             </div>  
 
             <div className={"container_box"}>
-                <h3>Button <span style={{ fontSize: "1.6rem", fontWeight:"400" }} >(클릭 횟수: <strong>{count}</strong>)</span></h3>
+                <h2>Button</h2>
+                <h3>클릭 버튼 <span className={"text_default"}>(클릭 횟수: <strong className={"text_bold"}>{count}</strong>)</span></h3>
                 <MyButton label="클릭하세요" onClick={handleClick} />
             </div>      
         </>
