@@ -17,7 +17,7 @@ const sampleItems = [
 
 export const Default = {
     args: {
-        name: 'test-radio',
+        name: 'default RadioGroup',
         itemList: sampleItems,
         defaultValue: 'seoul',
         isType:"",
@@ -27,7 +27,7 @@ export const Default = {
 // 가로형
 export const TypeVertical = {
   args: {
-    name: 'many-radio',
+    name: 'vertical RadioGroup',
     itemList: [
         { label: '남성', value:'M'},
         { label: '여성', value:'F'},
