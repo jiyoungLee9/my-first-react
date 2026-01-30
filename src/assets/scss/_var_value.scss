@@ -11,15 +11,33 @@ $clr_red:#E02535;
 $clr_blue:#137FEC;
 $clr_yellow:#EA8B00; 
 $clr_lightgray: #cacaca;
-$clr_darkgray: #8A8E99;
-$clr_dis_line:$clr_darkgray;
+$clr_darkgray: #797e8a;
 
 $clr_line:#E4E4E4;
 
+//line, bg color
 $clr_inp_default:#DBE0E6;
 $clr_inp_disabled:#CBD5E1;
-$clr_inp_disText:#617589;
+$clr_inp_disabled_bg:#F9FAFB;
+$clr_inp_focus:#137FEC;
+$clr_inp_error:#F43F5E;
+$clr_inp_error_bg:#FFFBFB;
+$clr_inp_valCheck:#10B981;
+$clr_inp_valCheck_bg:#F9FEFC;
+$clr_inp_read_bg:#F6F7F8;
 
-$f_size : 1.4rem;
-$f_line : 2.0rem;
+//font color
+$clr_state_de : #111418;
+$clr_state_dis : #617589;
+$clr_state_error : #BE123C;
+$clr_state_valCheck : #047857;
+$clr_state_ph : #94A3B8;
+
+$f_size : 1.6rem;
+$f_line : 2.4rem;
+
+//borderradius
+$bd_radius : 0.8rem;
+$bd_radius_lg : 1.6rem;
+$bd_radius_xl : 2.4rem;
 

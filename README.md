@@ -9,15 +9,15 @@
 특히 특정 framework 또는 UI platform, library를 사용할 경우 그 기반에 맞는 UI 구현을 위해 많은 시간을 들인다.<br /><br />
 
 다양한 실무 프로젝트를 수행하면서 반복적인 UI/UX 설계 및 구현 과정에서 파편처럼 산재되어 있던 UI 구현 방식을<br />
-체계적으로 정리하고, 관리하기 위해 파일 정리작업을 시작하였다.<br />
-모든 파일은 data호출을 제외한 UI 구현을 목적으로 하고, Storybook으로 관리하여 산출물화 하도록 한다.<br />
+체계적으로 관리하기 위해 파일 정리작업을 시작하였다.<br />
+모든 파일은 data호출을 제외한 UI 구현을 목적으로 하고, Storybook으로 관리하여 산출물화 하였다.<br />
 
 ### 기술정보
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css&logoColor=white"> <img src="https://img.shields.io/badge/scss-CC6699?style=for-the-badge&logo=sass&logoColor=white"> <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"> <img src="https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white">  <img src="https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=Storybook&logoColor=white">  
 반응형웹 적용, 웹접근성 준수, 웹표준 준수
 
 ### 작업기간
-- 2026년 1월 ~ 3월 (완료 예정)
+- 2026년 1월 ~ 3월 (예정)
 
 ### 작성자
 jack  

@@ -1,0 +1,71 @@
+/* src/components/TextField.module.module.scss */
+
+//input (TextField)
+.inp_wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap:0.8rem 0;
+
+    .inp_label {
+        display: block;
+        text-align: left;
+    }
+
+    label {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;        
+        gap:0 0.6rem;
+        color:$clr_basic;
+        font-size:$f_size;
+        line-height: $f_line;
+        @include font_weight(600);
+        &.is_req {
+            &::after {
+                content:" * ";
+                display:block;
+                @include font_set(sm);
+                color:$clr_red;
+            }
+        }        
+    }
+
+    input {
+        display: inline-block;
+        padding:0.8rem 1.6rem;
+        font-size:$f_size;
+        line-height: $f_line;        
+        @include inp_state();
+        border-radius: $bd_radius;
+        &:focus {
+            border-color:$clr_inp_focus;
+        }
+        &:disabled,
+        &[disabled] {
+            @include inp_state(disabled);
+        }
+        
+        &:read-only,
+        &[readonly] {
+            @include inp_state(readonly);
+        }       
+    }
+
+    /* msg노출은 jsx에서 직접 data에 따라 선언 여부 처리함 / css에서 컨트롤하는 부분은 제거함 */
+    .msg_error {
+        display: block;        
+        @include font_set(sm);
+        color:$clr_state_error;
+    }
+
+    &.is_error {
+        input {
+            @include inp_state(error);
+        }       
+    }    
+}
+

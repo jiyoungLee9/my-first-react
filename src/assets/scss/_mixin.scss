@@ -32,7 +32,7 @@
     #{$target_area}::-webkit-scrollbar { width: 0.6rem; height:0.6rem;}     
     #{$target_area}::-webkit-scrollbar-track { -webkit-border-radius: 0.3rem; border-radius: 0.3rem; background:#fff; }     
     #{$target_area}::-webkit-scrollbar-thumb { -webkit-border-radius: 0.3rem; border-radius: 0.3rem; background:$clr_main; }     
-    #{$target_area}::-webkit-scrollbar-thumb:window-inactive { background: $clr_main; }
+    #{$target_area}::-webkit-scrollbar-thumb:window-inactive { background-color: $clr_main; }
     #{$target_area}::-webkit-scrollbar-button:start { background:transparent }
     #{$target_area}::-webkit-scrollbar-button:end { background:transparent }   
 }
@@ -45,3 +45,47 @@
         font-weight:400;   
     }
 }
+@mixin font_weight( $target_weight2:null ){
+    @if ( $target_weight2 ){        
+        font-weight:#{$target_weight2};
+    }@else{
+        font-weight:400;   
+    }
+}
+
+@mixin font_set( $target_info:null ){
+    @if ( $target_info == sm ) {
+        font-size:1.4rem;
+        line-height:2.0rem;
+    } @else if ( $target_info == lg ) {
+        font-size:2.0rem;
+        line-height:2.8rem;
+    } @else if ( $target_info == xl ) {
+        font-size:2.4rem;
+        line-height:3.0rem;      
+    } @else {
+        font-size:$f_size;
+        line-height:$f_line;
+    }    
+}
+
+@mixin inp_state ( $target_state:null ){
+    @if ( $target_state == disabled ) {
+        background-color:$clr_inp_disabled_bg;
+        border-color:$clr_inp_disabled;
+        color:$clr_state_dis;
+    } @else if ( $target_state == readonly ) {
+        background-color:$clr_inp_read_bg;
+        border-color:transparent;
+        color:$clr_state_de;
+    } @else if ( $target_state == error ) {
+        background-color:$clr_inp_error_bg;
+        border-color:$clr_inp_error;
+        color:$clr_state_error;        
+    } @else {
+        background-color:#ffffff;
+        border:0.1rem solid $clr_inp_default;
+        color:$clr_state_de;
+    }
+}
+
