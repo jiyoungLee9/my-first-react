@@ -1,26 +1,8 @@
-@mixin ellips(){
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;     
-}
-
 @mixin default-shadow(){
-    box-shadow: 0 0 0.8rem 0 rgba(0,0,0,0.08);  
-}
-
-@mixin layer-shadow(){
-    box-shadow: 0 0 0.8rem 0 rgba(0,0,0,0.15);  
+    box-shadow: 0 0 0.8rem 0.3rem rgba(0,0,0,0.08);  
 }
 
 @mixin default-trans( $target:null ){
-    @if ( $target ){
-        transition: #{$target} .35s ease-in-out;
-    }@else{
-        transition: all .35s ease-in-out;
-    }
-}
-
-@mixin layer-trans( $target:null ){
     @if ( $target ){
         transition: #{$target} .35s ease-in-out;
     }@else{
@@ -76,7 +58,7 @@
         color:$clr_state_dis;
     } @else if ( $target_state == readonly ) {
         background-color:$clr_inp_read_bg;
-        border-color:transparent;
+       border-color:$clr_inp_disabled;
         color:$clr_state_de;
     } @else if ( $target_state == error ) {
         background-color:$clr_inp_error_bg;
