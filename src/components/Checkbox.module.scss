@@ -1,0 +1,80 @@
+/* src/components/Checkbox.module.scss */
+
+$check-icon: "data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.8684 0.365983C11.1027 0.600393 11.2344 0.918278 11.2344 1.24973C11.2344 1.58119 11.1027 1.89907 10.8684 2.13348L4.61839 8.38348C4.38398 8.61782 4.06609 8.74947 3.73464 8.74947C3.40318 8.74947 3.0853 8.61782 2.85089 8.38348L0.35089 5.88348C0.123192 5.64773 -0.00280077 5.33198 4.72533e-05 5.00423C0.00289528 4.67649 0.134356 4.36297 0.366117 4.13121C0.597877 3.89945 0.911392 3.76799 1.23914 3.76514C1.56688 3.76229 1.88264 3.88829 2.11839 4.11598L3.73464 5.73223L9.10089 0.365983C9.3353 0.131644 9.65318 0 9.98464 0C10.3161 0 10.634 0.131644 10.8684 0.365983Z' fill='white'/%3E%3C/svg%3E%0A";
+$check-icon-disabled : "data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.8684 0.365983C11.1027 0.600393 11.2344 0.918278 11.2344 1.24973C11.2344 1.58119 11.1027 1.89907 10.8684 2.13348L4.61839 8.38348C4.38398 8.61782 4.0661 8.74947 3.73464 8.74947C3.40318 8.74947 3.0853 8.61782 2.85089 8.38348L0.35089 5.88348C0.123192 5.64773 -0.00280077 5.33198 4.72533e-05 5.00423C0.00289528 4.67649 0.134356 4.36297 0.366117 4.13121C0.597877 3.89945 0.911392 3.76799 1.23914 3.76514C1.56688 3.76229 1.88264 3.88829 2.11839 4.11598L3.73464 5.73223L9.10089 0.365983C9.3353 0.131644 9.65318 0 9.98464 0C10.3161 0 10.634 0.131644 10.8684 0.365983Z' fill='%2394A3B8'/%3E%3C/svg%3E%0A";
+
+.check_wrap {
+    display: flex;   
+    flex-direction: row;
+    align-items: flex-start;
+    gap:0 0.8rem;
+
+    .checkItem {
+        position: relative;
+        display: block;
+        user-select: none; /* 더블 클릭 시 텍스트 선택 방지 */
+
+        input[type="checkbox"] {
+            appearance: none;
+            width: 0;
+            height: 0;
+            position: absolute;
+            overflow:hidden;
+            
+            & + label {
+                display: inline-flex;
+                gap:0 0.6rem;
+                cursor: pointer;
+                &::before {
+                    content:"";
+                    display: block;
+                    box-sizing: border-box;
+                    width:2.0rem;
+                    height:2.0rem;
+                    border-radius: 0.4rem;
+                    border:0.1rem solid $clr_inp_default;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: 1.2rem auto;                    
+                    background-color:#fff;
+                    @include default-transition();
+                }
+                & span {
+                    @include font_set();
+                    color:$clr_basic;
+                    font-size:400;
+                }
+            }
+
+            &:checked + label {
+                &::before {
+                    border-color:$clr_main;
+                    background-image:url($check-icon);
+                    background-color:$clr_main;                    
+                }
+                & span {
+                    font-weight: 600;
+                }
+            }
+
+            &:disabled + label {
+                &::before {
+                    border-color:$clr_inp_disabled;                    
+                    background-color:$clr_inp_disabled_bg;                    
+                }
+            } 
+
+            &:checked:disabled + label {
+                &::before {
+                    border-color:$clr_inp_disabled;
+                    background-image:url($check-icon-disabled) !important;
+                    background-color:$clr_inp_disabled_bg;                    
+                }
+                & span {
+                    color: $clr_state_dis;
+                }
+            }             
+
+        }
+    }
+}

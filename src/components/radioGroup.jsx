@@ -11,7 +11,7 @@ const RadioGroup = ({ name, itemList, defaultValue, isType }) => {
     return (
         // className 다중화 정의
         //  isType 값에 "vertical"이 들어오면 다중 class "type_vertical"을 추가로 작성해 줍니다.
-        <div className={` ${styles.radioGroup} ${isType === "vertical" ? styles.type_vertical : ""} me_test `}>            
+        <div className={` ${styles.radioGroup} ${isType === "vertical" ? styles.type_vertical : ""}`}>            
 
             {/* [반복문 로직] 
                 itemList 배열의 개수만큼 아래 코드를 반복해서 생성합니다.

@@ -10,6 +10,15 @@
     }
 }
 
+@mixin default-transition( $target_trans:null ){
+    @if ( $target_trans) {
+        transition: $target_trans 0.24s ease-in-out;
+    }@else{
+        transition: all 0.24s ease-in-out;
+    }
+    
+}
+
 @mixin scroll-custom( $target_area ){
     #{$target_area}::-webkit-scrollbar { width: 0.6rem; height:0.6rem;}     
     #{$target_area}::-webkit-scrollbar-track { -webkit-border-radius: 0.3rem; border-radius: 0.3rem; background:#fff; }     
