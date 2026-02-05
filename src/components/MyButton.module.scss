@@ -16,4 +16,9 @@
     .btn_txt {
         font-weight: 600;
     }
+    &:disabled {
+        border-color:$clr_inp_disabled;
+        background-color:$clr_inp_disabled_bg;
+        color:$clr_state_dis;
+    }
 }

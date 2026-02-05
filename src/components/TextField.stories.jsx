@@ -11,6 +11,7 @@ export default {
         label: { control: 'text' },        
         error: { control: 'boolean' }, // 에러 여부
         errorMsg: { control: 'text' }, // 에러 메시지를 텍스트로 입력해볼 수 있게 함
+        className : { control:"text"},
         variant: {
             control: 'select',
             options: ['Disabled', 'Error', 'Readonly'],

@@ -9,6 +9,8 @@ export default {
     // 컴포넌트의 props 타입을 정의하면 컨트롤러가 생깁니다 (선택 사항)
     argTypes: {
         label: { control: 'text' },
+        className: { control: 'text' },
+        disabled : {control : "boolean"},
         onClick: { action: 'clicked' } // 클릭 시 로그 찍히게 설정
     },
 };
@@ -17,14 +19,20 @@ export default {
 
 // 기본(Primary) 케이스
 export const Default = {
-    args: {
-        label: '기본 버튼', // props.label에 들어갈 값
+    args:{
+        // props.label에 들어갈 값
+        label:'기본 버튼',
+
+        disabled:false,
+        className:""
     },
 };
 
-// 긴 텍스트 케이스 (퍼블리싱 테스트용)
-export const LongText = {
+// Disabled
+export const Disabled = {
     args: {
-        label: '텍스트가 매우매우 긴 버튼입니다',
+        label: 'Disabled 선언이 된 버튼',
+        disabled : true,
     },
 };
+

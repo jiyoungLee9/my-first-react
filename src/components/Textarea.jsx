@@ -5,6 +5,7 @@ import styles from './Textarea.module.scss';
 // - label: 입력창 위의 제목
 // - error: 에러 발생 여부 (true/false)
 // - errorMsg : 에러 메세지
+// - className : 스타일 확장용 (최상위)
 // props ====
 // - name: input name
 // - id : 고유id값
@@ -15,11 +16,13 @@ import styles from './Textarea.module.scss';
 // - required : required 여부 (true/false)
 // - disabled : 사용불가 여부 (true/false)
 
-const Textarea = ({ label, error, errorMsg, props}) => {
-    return (
-        <div className={ `${styles.textarea_wrap} ${ error === true ? styles.is_error : ""}` }>
+const Textarea = ({ label, error, errorMsg, className, props}) => {
+    return (        
+        <div className={ `${styles.textarea_wrap}${className ? ` ${className}` : ''}${ error ? " " + styles.is_error : ""} ` }>
             <div className={styles.textarea_label}>
-                <label htmlFor={props.id} className={props.required === true ? styles.is_req : ""}>{label}</label>
+                <label htmlFor={props.id} 
+                 {...(props.required !== undefined && { class: `is_req`}) }
+                >{label}</label>
                 {
                     //<label htmlFor={props.id} className={props.required === true ? styles.is_req : ""}>{label}</label>
                 }

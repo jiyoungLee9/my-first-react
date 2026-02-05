@@ -15,6 +15,7 @@ export default {
         label : { control: "text"},
         checked : {control : "boolean"},
         disabled : {control : "boolean"},
+        className : {control : "text"},
         onchange : {action : "changed"}     
     }
 };

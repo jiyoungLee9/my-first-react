@@ -5,6 +5,7 @@ import styles from './TextField.module.scss';
 // - label: 입력창 위의 제목
 // - error: 에러 발생 여부 (true/false)
 // - errorMsg : 에러 메세지
+// - className : 스타일 확장용 (최상위)
 // props ====
 // - name: input name
 // - type : input type
@@ -16,9 +17,9 @@ import styles from './TextField.module.scss';
 // - required : required 여부 (true/false)
 // - onChange :  event change
 
-const TextField = ({ label, error, errorMsg, props}) => {
+const TextField = ({ label, error, errorMsg, className, props}) => {
     return (
-        <div className={ `${styles.inp_wrap} ${ error === true ? styles.is_error : ""}` }>
+        <div className={ `${styles.inp_wrap}${ className ? ` ${className}` : ""}${ error ? " " + styles.is_error : ""}` }>
             <div className={styles.inp_label}>
                 <label htmlFor={props.id} className={props.required === true ? styles.is_req : ""}>{label}</label>
             </div>
