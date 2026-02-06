@@ -1,0 +1,90 @@
+/* src/components/Switch.module.scss */
+
+$switch-width: 4.4rem;
+$switch-height: 2.4rem;
+$knob-size: 2.0rem;
+$padding: 0.2rem;
+
+.switch_wrap {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+
+    &.is_disabled {
+        cursor: not-allowed;
+        opacity: 0.64;
+    }    
+
+    input[type="checkbox"] {
+        //미노출
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .label_wrap {
+        position: relative;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        gap:0 0.6rem;
+        box-sizing: border-box;
+        .label_track {
+            box-sizing: border-box;
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            width:$switch-width;
+            height:$switch-height;
+            padding:$padding;
+            background-color:$clr_switch_bg;
+            border-radius: 999rem;
+            @include default-transition(background-color);            
+            &::after {
+                content:"";
+                display: inline-block;
+                width:$knob-size;
+                height:$knob-size;
+                background-color:#fff;
+                border-radius: 50% 50%;
+                vertical-align: middle;
+                @include default-transition();
+            }
+        }
+        .label_txt {
+            display: inline-block;
+            @include font_set();
+            @include font_weight();
+            vertical-align: middle;
+        }
+    }
+
+    input[type="checkbox"]:checked {
+        & + .label_wrap {
+            .label_track  {
+                background-color:$clr_main;
+                justify-content: flex-end;
+            }
+            .label_txt {
+                @include font_weight(600);
+            }   
+        }
+    }
+
+    input[type="checkbox"]:hover {
+        & + .label_wrap {
+            & + .label_track  {
+                background-color:$clr_inp_hover;      
+            }
+        }
+    }
+}

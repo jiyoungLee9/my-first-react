@@ -20,20 +20,8 @@ export default {
     }
 };
 
-export const Default = {
-    args : {
-        label: "이용약관에 동의합니다.", 
-        checked:false, 
-        disabled:false,
-        name: "checkbox_name1",
-        id:"checkbox_id1",
-        value:"agree",
-        onchange: () => {}
-    },
-};
-
 //react 표준 useState 사용 시
-const Template = (args) => {
+const UI_Template = (args) => {
     // 1. 스토리북 컨트롤(args.checked)을 초기값으로 하는 '내부 상태' 생성
     const [isChecked, setIsChecked] = useState(args.checked);
 
@@ -55,18 +43,17 @@ const Template = (args) => {
     ); 
 };
 
-export const Interactive = {
+export const Default = {
     args : {
         label: "이용약관에 동의합니다.", 
         checked:false, 
         disabled:false,
-        name: "checkbox_name4",
-        id:"checkbox_id4",
-        value:"agree"
+        name: "checkbox_name1",
+        id:"checkbox_id1",
+        value:"agree",
+        onchange: () => {}
     },
-
-    render: (args) => <Template {...args} />,
-
+    render : (args) => <UI_Template {...args} />,
     // Storybook에서 클릭했을 때 실제로 체크가 바뀌는 것처럼 보이게 하는 설정
     /* storybook 전용 훅 사용 시
     render: function Render(args) {
@@ -82,7 +69,7 @@ export const Interactive = {
 
 export const Checked = {
     args : {
-        label: "마케팅 정보 수신 동의 (선택)", 
+        label: "이용약관에 동의합니다. (체크됨)", 
         checked:true, 
         disabled:false,
         name: "checkbox_name3",
@@ -95,7 +82,7 @@ export const Checked = {
 
 export const Disabled = {
     args : {
-        label: "필수 항목 동의 완료", 
+        label: "이용약관에 동의합니다. (비활성화)", 
         checked:true, 
         disabled:true,
         name: "checkbox_name2",
