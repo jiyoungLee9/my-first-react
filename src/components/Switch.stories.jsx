@@ -64,3 +64,14 @@ export const Disabled= {
     },
     //render: (args) => <UI_Template {...args} />,
 }
+
+// 개발자가 style을 덮어쓰거나 margin을 줄 때 테스트
+export const WithCustomClass = {
+    args: {
+        label: 'Switch 커스텀 스타일',
+        checked: false,
+        className: 'mgt16', // margin-top:1.6rem 적용
+        // style: { border: '1px solid red' } // 인라인 스타일 예시 (input 자체는 css에서 이미 적용하지 아니함)
+    },
+    render: (args) => <UI_Template {...args} />,
+};
