@@ -7,18 +7,18 @@ import styles from './Modal.module.scss';
 // props ====
 // - isOpen : modal 오픈여부 (true/false)
 // - title :  modal 제목
-// - content : modal 내용
+// - children : modal 내용 (react 기본예약어)
 // - footer :  modal 하단 버튼
 // - className : 스타일 확장용 (최상위)
 // - onClose : modal 닫기이벤트 
 // ...props : 기타
 
 const Modal = ({
-    isOpen, title, content, footer, className, onClose, ...props
+    isOpen, title, children, footer, className, onClose, ...props
 }) => {
 
     // 1. 모달이 열려있을 때 body 스크롤 막기 (필수!)
-    // .is_modal_open 사용
+    // body.is_modal_open
     useEffect(() => {
         if(isOpen){            
             document.body.classList.add('is_modal_open');
@@ -35,9 +35,9 @@ const Modal = ({
     // 2. 모달이 닫혀있으면 아무것도 렌더링하지 않음
     if (!isOpen) return null;
 
-    // 3. Portal을 이용해 document.body 바로 아래에 렌더링
+    // 3. createPortal을 이용해 document.body 바로 아래에 렌더링
     return createPortal(
-        <div className={styles.modal_wrap}>
+        <div className={styles.modal_wrap} onClick={onClose}> 
             <div 
                 className={` ${styles.modal_inner}${className ? ` ${className}` : ``}`}
                 onClick={(e) => e.stopPropagation()} //모달 내부 클릭 시 닫힘 방지
@@ -51,7 +51,7 @@ const Modal = ({
                     </button>
                 </header>
                 <main className={styles.m_body}>
-                    {content}
+                    {children}
                 </main>
                 {
                     // footer 있을 때만 노출

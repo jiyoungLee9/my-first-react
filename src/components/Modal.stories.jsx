@@ -27,6 +27,15 @@ const UI_Template = (args) => {
         setIsOpen(false);
         args.onClose(); // Actions 패널 로그용
     }
+
+    //children 샘플 값
+    const sampleContent = (
+        <>
+            <p>children 예약어로 지정된 하위 내용을 알아서 children 의 값으로 인지합니다. <br />&lt;Modal&gt; 태그 하위에 있는 태그는 children 값으로 인지합니다.</p>
+            <p>여기에 모달 본문 내용이 들어갑니다.</p>
+        </>
+    )
+
     return (
         <div>
             {/* 1. 트리거 버튼 */}
@@ -38,9 +47,12 @@ const UI_Template = (args) => {
                 isOpen={isOpen} 
                 onClose={closeModal}
             >
-                {/* content으로 전달되는 내용 */}
-                <p>여기에 모달 본문 내용이 들어갑니다.</p>
-                <p>JSP/jQuery보다 구조 잡기가 훨씬 명확하죠?</p>
+            {/* 
+                children 으로 전달되는 내용 
+                - args.children 값 있 경우 args.children 값을 최우선 함
+                - args.children 값 없을 경우 샘플 있음
+            */}
+                { args.children || sampleContent }
             </Modal>
         </div>
     )
@@ -77,7 +89,22 @@ const UI_FooterTemplate = (args) => {
 export const Default = {
     args: {
         title: '기본 모달',
-    },
+    },      
+    render: (args) => <UI_Template {...args} />,
+}
+
+export const ChangeContents = {
+    args: {
+        title: '모달내용 변경되었습니다',
+
+        //children 변경하여 작성
+        children : (
+            <>
+                <p>UI_Template 에서 지정한 children 값을 강제로 변경해 봅니다.</p>
+                <p>새롭게 변경한 모달 본문 내용이 들어갑니다.</p>   
+            </>
+        )
+    },      
     render: (args) => <UI_Template {...args} />,
 }
 
