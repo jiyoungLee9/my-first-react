@@ -75,7 +75,7 @@ const UI_FooterTemplate = (args) => {
                 // Footer에 버튼 컴포넌트 조합
                 footer={
                 <>
-                    <Button onClick={closeModal} className="btn_sub" label="취소"></Button>
+                    <Button onClick={closeModal} variant="sub" label="취소"></Button>
                     <Button onClick={closeModal} label="삭제"></Button>
                 </>
                 }
