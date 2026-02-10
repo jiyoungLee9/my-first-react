@@ -5,7 +5,7 @@ import styles from './MyButton.module.scss';
 // [전달값]
 // props ====
 // - label: 버튼텍스트
-// - className : 스타일 확장용 (최상위)
+// - className : (전역) 스타일 확장용
 // - disabled : 사용불가 여부 (true/false)
 // - onClick : 클릭이벤트
 
