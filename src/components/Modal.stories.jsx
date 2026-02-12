@@ -80,6 +80,7 @@ const UI_FooterTemplate = (args) => {
                 </>
                 }
             >
+                {/* children */}
                 <p>삭제된 데이터는 복구할 수 없습니다.</p>
             </Modal>
         </div>
@@ -117,7 +118,7 @@ export const WithFooterButtons = {
 
 export const LongContent = {
   args: {
-    title: '스크롤 테스트',
+    title: '스크롤 테스트 (긴 내용)',
   },
   render: (args) => {
     const [isOpen, setIsOpen] = useState(false);
