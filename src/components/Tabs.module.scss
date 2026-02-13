@@ -1,0 +1,60 @@
+/* src/components/Tabs.module.scss */
+
+//tabs (pill style)
+
+.tab_wrap {
+    position: relative;
+    width:100%;
+
+    //tab버튼 모음
+    .tab_list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-items: flex-start;
+        gap:0 0.8rem;
+        background-color:$clr_inp_disabled_bg;
+        border-radius: 1.4rem;
+        padding:0.6rem;
+
+        .tab {
+            display: block;
+            padding:1.2rem 2.4rem;
+            text-align: center;
+            @include font_set();
+            font-weight: 400;
+            background-color: transparent;
+            border-radius: $bd_radius;
+            color:$clr_text;
+            @include default-trans();
+
+            &:hover {
+                color:$clr_basic;
+                font-weight: 600;
+            }
+            &:disabled {
+                cursor: not-allowed;
+                opacity: 0.5;
+            }
+            &.is_active { 
+                background-color: $clr_main;
+                color:#fff;
+                font-weight: 600;
+            }
+        }
+    }
+
+    //tab 패널모음
+    .tab_panel {
+        padding: 1.6rem 0;
+        @include font_set(lg);
+        font-weight: 400;
+        animation: fade-in 0.35s ease-in-out;
+    }    
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(0.6rem); }
+    to { opacity: 1; transform: translateY(0); }
+}

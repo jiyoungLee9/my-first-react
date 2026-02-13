@@ -30,8 +30,8 @@ export const Default = {
         itemList: sampleItems,
         defaultValue: 'busan',
         props : {
-            name:'select_A',
-            id:'select_A',
+            name:'selectA',
+            id:'selectA',
         },   
     },
 };
@@ -47,8 +47,8 @@ export const TypeVertical = {
     isVertical:"vertical",
     defaultValue: 'M',
     props : {
-        name:'select_B',
-        id:'select_B',
+        name:'selectB',
+        id:'selectB',
     },       
   },
 };

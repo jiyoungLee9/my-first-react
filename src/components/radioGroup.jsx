@@ -9,7 +9,7 @@ import styles from './radioGroup.module.scss';
 // - className : 스타일 확장용 (최상위)
 // props ====
 // - name: 라디오 name
-// - id : 고유id값
+// - id : 고유id값 // test 값일 경우 뒤에 연번이 붙는 방식으로 지정 
 // - disabled : 사용불가 여부 (true/false)
 // - readonly : readonly 여부 (true/false)
 // - required : required 여부 (true/false)
@@ -33,13 +33,13 @@ const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, props }) => {
                             <input type="radio" 
                                 name={props.name}
                                 //id={props.id} //단건
-                                // itemList 갯수에 맞게 id 정의                                
-                                id={`${props.id}_${index}`} 
+                                // itemList 갯수에 맞게 id 정의 : idValue0 , idValue1, idValue2 ... 방식                            
+                                id={`${props.id}${index}`}
                                 value={item.value}                                
                                 defaultChecked={defaultValue === item.value}
                             />
                             {/* itemList 갯수에 맞게 name, id 정의 */}
-                            <label htmlFor={`${props.id}_${index}`} >
+                            <label htmlFor={`${props.id}${index}`} >
                                 <span>{item.label}</span>
                             </label>
                         </p>
