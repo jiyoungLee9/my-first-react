@@ -13,6 +13,7 @@ import styles from './radioGroup.module.scss';
 // - disabled : 사용불가 여부 (true/false)
 // - readonly : readonly 여부 (true/false)
 // - required : required 여부 (true/false)
+// - onChange : onchange 이벤트
 
 
 const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, props }) => {
@@ -26,16 +27,19 @@ const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, props }) => {
             */}         
 
             {  
-                itemList.map( (item) => {
+                itemList.map( (item, index) => {
                     return (
                         <p className={styles.radioItem} key={item.value}>
                             <input type="radio" 
-                                name={props.name} 
-                                id={props.id} 
+                                name={props.name}
+                                //id={props.id} //단건
+                                // itemList 갯수에 맞게 id 정의                                
+                                id={`${props.id}_${index}`} 
                                 value={item.value}                                
                                 defaultChecked={defaultValue === item.value}
                             />
-                            <label htmlFor={props.id}>
+                            {/* itemList 갯수에 맞게 name, id 정의 */}
+                            <label htmlFor={`${props.id}_${index}`} >
                                 <span>{item.label}</span>
                             </label>
                         </p>
