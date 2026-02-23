@@ -1,0 +1,78 @@
+/* src/components/Dropdown.module.scss */
+
+//Download menu
+
+$arrow-icon : "data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6.16675L0 1.16675L1.16667 8.10623e-05L5 3.83341L8.83333 8.10623e-05L10 1.16675L5 6.16675Z' fill='%2364748B'/%3E%3C/svg%3E%0A";
+
+/* ### 일괄 제안 소스로 작성 중 */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width:auto;
+    min-width: 20.0rem; // 기본 너비
+}
+
+.trigger {
+    width: 100%;
+    padding: 0.8rem 1.6rem;
+    background-color: #fff;
+    border: 0.1rem solid $clr_line;
+    border-radius: $bd_radius;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include font_set();
+
+    &:hover { background-color: #f9f9f9; }
+    &:disabled { 
+        cursor: not-allowed;
+        color: $clr_state_dis;
+        background-color:$clr_inp_disabled_bg;
+    }
+}
+
+.arrow {
+    display: inline-block;
+    width:2.0rem;
+    height:2.0rem;
+    background-image:url($arrow-icon);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1.0rem auto;
+    transition: transform 0.2s;
+    &.isOpen { transform: rotate(180deg); }
+}
+
+.menu {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 0.1rem solid $clr_line;
+    border-radius: $bd_radius;
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    margin: 0;
+    padding: 0.4rem 0;
+    list-style: none;
+    animation: dropdown-fade 0.2s ease;
+}
+
+.item {
+    padding: 0.8rem 1.6rem;
+    @include font_set();
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover { background-color: #f0f7ff; color: $clr_main; }
+    &.isSelected { background-color: #e7f3ff; color: $clr_main; font-weight: 600; }
+}
+
+@keyframes dropdown-fade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
