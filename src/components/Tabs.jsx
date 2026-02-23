@@ -40,7 +40,7 @@ const Tabs = ({
                         return (
                             <button 
                                 type="button"
-                                rol="tab" 
+                                role="tab" 
                                 key={tabId} 
                                 id={tabId}
                                 aria-selected={isActive} 

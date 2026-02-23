@@ -1,0 +1,54 @@
+/* src/components/SequentialTabs.module.scss */
+
+//tab 순차적 작은 tab (line style)
+
+/* ### 일괄 제안 소스로 작성 중 */
+
+.container {
+    display: flex;
+    flex-wrap: wrap; // 버튼들은 위로, 컨텐츠는 아래로 떨어뜨리기 위함
+    border-bottom: 0.2rem solid #eee;
+    position: relative;
+}
+
+.tabButton {
+    padding: 1.6rem 2.4rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    @include font_set();
+    font-weight: 400;
+    color: $clr_text;
+    border-bottom: 0.4rem solid transparent;
+    margin-bottom: -0.4rem; // 컨테이너 border와 겹치게 처리
+    transition: all 0.2s;
+    order: 1; // 버튼들을 시각적으로 앞 순서로 배치
+
+    &:hover {
+        color: $clr_basic;
+    }
+
+    &.isActive {
+        font-weight: 600;
+        color: $clr_main;
+        border-bottom: 0.4rem solid $clr_main;
+    }
+}
+
+.tabPanel {
+    width: 100%; // 한 줄을 꽉 차지하게 하여 다음 버튼 아래로 밀어냄
+    order: 2; // 컨텐츠들을 시각적으로 버튼들 뒤(아래)로 배치
+    padding: 2.4rem 0;
+    display: none;
+    @include font_set();
+    animation: slide-up 0.3s ease-out;
+
+    &.isActive {
+        display: block;
+    }
+}
+
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

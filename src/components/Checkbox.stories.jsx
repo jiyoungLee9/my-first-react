@@ -16,7 +16,7 @@ export default {
         checked : {control : "boolean"},
         disabled : {control : "boolean"},
         className : {control : "text"},
-        onchange : {action : "changed"}     
+        onChange : {action : "changed"}     
     }
 };
 
@@ -51,7 +51,7 @@ export const Default = {
         name: "checkbox_name1",
         id:"checkbox_id1",
         value:"agree",
-        onchange: () => {}
+        onChange: () => {}
     },
     render : (args) => <UI_Template {...args} />,
     // Storybook에서 클릭했을 때 실제로 체크가 바뀌는 것처럼 보이게 하는 설정
@@ -75,7 +75,7 @@ export const Checked = {
         name: "checkbox_name3",
         id:"checkbox_id3",
         value:"agree",
-        onchange: () => {}
+        onChange: () => {}
     }
 };
 
@@ -88,7 +88,7 @@ export const Disabled = {
         name: "checkbox_name2",
         id:"checkbox_id2",
         value:"agree",
-        onchange: () => {}
+        onChange: () => {}
     }
 };
 

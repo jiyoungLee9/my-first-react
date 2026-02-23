@@ -38,7 +38,7 @@ function App() {
                         name="city"
                         itemList={cityOptions}
                         defaultValue="seoul"
-                        isType=""
+                        isVertical=""
                     >
                     </RadioGroup>                    
                 </section>
@@ -49,7 +49,7 @@ function App() {
                         name="sex"
                         itemList={sexOption}
                         defaultValue="F"
-                        isType="vertical"
+                        isVertical="vertical"
                     >
                     </RadioGroup>                  
                 </section>                
