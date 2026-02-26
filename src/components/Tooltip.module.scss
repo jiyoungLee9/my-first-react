@@ -1,0 +1,106 @@
+/* src/components/Tooltip.module.scss */
+
+//Tooltip
+// 트리거 hover시 버블 노출됨 (위치 자동 노출아님 / 위치값 강제로 정의 처리함)
+
+.tooltip_wrap {
+    position: relative;
+    display: inline-block;
+}
+
+//트리거 (뱃지 또는 버튼)
+.triggers {
+    display: inline-block;
+    width:2.4rem;
+    height:2.4rem;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-align: center;
+    background-color: $clr_darkgray;
+}
+
+
+//버블 (노출되는 내용)
+.bubble {
+    position: absolute;
+    padding: 0.8rem 1.6rem;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    @include font_set(sm);
+    border-radius: $bd_radius;
+    white-space: normal;
+    text-align: center;
+    width:auto;
+    min-width:24.0rem;
+    max-width:80%;
+    height:auto;
+    max-height:60.0rem;
+    z-index: 1000;
+    pointer-events: none; // 툴팁 자체가 마우스 이벤트를 가로막지 않도록 함
+    animation: fade-in 0.24s ease-in-out;
+
+    // 화살표 공통
+    &::after {
+        content: '';
+        position: absolute;
+        border: 0.4rem solid transparent;
+    }
+}
+
+// 위치별 스타일 (Tooltop.jsx 상 [position] 값에 classNAme 에 강제 position 값으로 연동됨)
+.top {
+    bottom: calc(100% + 1.0rem);
+    left: 50%;
+    transform: translateX(-50%);
+
+    &::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-top-color: rgba(0, 0, 0, 0.85);
+    }
+}
+
+.bottom {
+    top: calc(100% + 1.0rem);
+    left: 50%;
+    transform: translateX(-50%);
+
+    &::after {
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom-color: rgba(0, 0, 0, 0.85);
+    }
+}
+
+.left {
+    right: calc(100% + 1.0rem);
+    top: 50%;
+    transform: translateY(-50%);
+    &::after {
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        border-left-color: rgba(0, 0, 0, 0.85);
+    }
+}
+
+.right {
+  left: calc(100% + 1.0rem);
+  top: 50%;
+  transform: translateY(-50%);
+
+  &::after {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-right-color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: scale(0.95) translate(-50%, -50%); } // 위치에 따라 보정 필요할 수 있음
+    to { opacity: 1; transform: scale(1) translate(-50%, 0); }
+}
