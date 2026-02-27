@@ -1,0 +1,75 @@
+/* src/components/Badge.module.scss */
+
+//Badge
+// Tooltip hover용의 트리거용 뱃지
+// .type_error .type_info 를 추가하여 총 3가지 모드로 작동됨
+
+.badge {
+    position: relative;
+    display: inline-flex;
+    box-sizing: border-box;
+    margin-left:0.4rem;
+    margin-right:0.4rem;
+    width:2.4rem;
+    height:2.4rem;    
+    border-radius: 50% 50%;;
+    background-color: #fff;
+    border:0.2rem solid $clr_darkgray;
+    vertical-align: middle;
+    @include default-trans();
+    &::after {
+        content: "!";
+        display: inline-block;
+        width:100%;
+        @include font_set(sm);
+        font-weight: 900;
+        text-align:center;
+        vertical-align: middle;
+        color:$clr_darkgray;
+        @include default-trans();
+    }
+    &:hover {
+        border-color:#000;
+        opacity: 1;
+        &::after {
+            color:#000;
+            opacity: 1;
+        }
+    }
+
+    //type_error 일때
+    &.type_error {
+        background-color:$clr_red;
+        border-color:$clr_red;
+        opacity: 0.84;
+        &::after { 
+            color: #fff;
+        }
+        &:hover {
+            background-color:$clr_red;
+            border-color:$clr_red;
+            &::after { 
+                color: #fff;
+            }            
+        }
+    }
+
+    //type_info 일때
+    &.type_info { 
+        border-color:$clr_blue;
+        background-color:$clr_blue;
+        opacity: 0.84;
+        &::after { 
+           color: #fff; 
+        }
+        &:hover {
+            border-color:$clr_blue;
+            background-color:$clr_blue;
+            &::after { 
+                color: #fff;
+            }            
+        }
+    }    
+}
+
+//tooltip은 Tooltip.jsx로 존재함

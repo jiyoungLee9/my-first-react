@@ -2,24 +2,15 @@
 
 //Tooltip
 // 트리거 hover시 버블 노출됨 (위치 자동 노출아님 / 위치값 강제로 정의 처리함)
+//현재 tooltip은 노출되는 순수한 내용영역의 컴포넌트 일뿐 노출의 트리거 부분은 뱃지(Badge.jsx) 컴포넌트 임 (뱃지는 순수 style으로만 구성된 영역)
 
 .tooltip_wrap {
     position: relative;
     display: inline-block;
 }
 
-//트리거 (뱃지 또는 버튼)
-.triggers {
-    display: inline-block;
-    width:2.4rem;
-    height:2.4rem;
-    vertical-align: middle;
-    font-size: 1.2rem;
-    font-weight: 900;
-    text-align: center;
-    background-color: $clr_darkgray;
-}
-
+//trigger는 Badge.jsx 별도 존재함
+//기본적으로 button 태그와 함깨 노출하도록 함
 
 //버블 (노출되는 내용)
 .bubble {
@@ -29,10 +20,11 @@
     color: #fff;
     @include font_set(sm);
     border-radius: $bd_radius;
-    white-space: normal;
+    word-wrap: nowrap;
+    word-break: keep-all;
     text-align: center;
     width:auto;
-    min-width:24.0rem;
+    min-width:26.0rem;
     max-width:80%;
     height:auto;
     max-height:60.0rem;

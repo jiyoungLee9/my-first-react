@@ -5,6 +5,7 @@
 import React from 'react';
 import Tooltip from './Tooltip';
 import Button from './MyButton';
+import Badge from './Badge';
 
 export default {
   title: 'Components/Tooltip',
@@ -13,6 +14,7 @@ export default {
     layout: 'centered',
   },
 };
+
 
 const SampleCon = [
     <div key="msg1">
@@ -33,7 +35,7 @@ const SampleCon = [
 
 export const Default = {
   args: {
-    content: '정보를 더 확인하려면 클릭하세요.',
+    content: '마우스를 올리는 동안 툴팁 정보가 나옵니다.',
     children: <Button label="마우스를 올려보세요"></Button>,
     position: 'top',
   },
@@ -46,24 +48,47 @@ export const Positions = {
         <div style={{ display: 'flex', gap: '100px' }}>
             {/* SampleCon[0] 사용 */}
             <Tooltip content={SampleCon[0]} position="left">
-                <button type="button">왼쪽 (긴 내용)</button>
+                <Button label="왼쪽 (긴 내용)"></Button>
             </Tooltip>
 
             {/* SampleCon[1] 사용 */}
             <Tooltip content={SampleCon[1]} position="top">
-                <button type="button">위쪽 (스타일 내용)</button>
+                <Button label="위쪽 (스타일 내용)"></Button>
             </Tooltip>
         </div>
 
         <div style={{ display: 'flex', gap: '100px' }}>
             <Tooltip content="단순 텍스트도 가능합니다." position="bottom">
-                <button type="button">아래쪽 (일반)</button>
+                <Button label="아래쪽 (일반)"></Button>
             </Tooltip>
-
             <Tooltip content={SampleCon[0]} position="right">
-                <button type="button">오른쪽 (긴 내용)</button>
+                <Button label="오른쪽 (긴 내용)"></Button>
             </Tooltip>
         </div>
+    </div>
+  ),
+};
+
+export const BadgeStyle = {
+  render: () => (
+    <div style={{ display: 'inline-flex', flexDirection: 'row', gap: '20px 50px', padding: '150px' }}>
+        {/* SampleCon[0] 사용 */}
+        <Tooltip content={SampleCon[0]} position="left">
+            <Badge badgeLabel="기본뱃지 / 왼쪽 (긴 내용)" type=""></Badge>
+        </Tooltip>
+
+        {/* SampleCon[1] 사용 */}
+        <Tooltip content={SampleCon[1]} position="top">
+            <Badge badgeLabel="기본뱃지 / 왼쪽 (긴 내용)" type=""></Badge>
+        </Tooltip>
+
+        <Tooltip content="단순 텍스트도 가능합니다." position="bottom">
+            <Badge badgeLabel="에러뱃지 / 아래쪽 (일반))" type="type_error"></Badge>
+        </Tooltip>
+
+        <Tooltip content={SampleCon[0]} position="right">
+            <Badge badgeLabel="안내뱃지 /오른쪽 (긴 내용)" type="type_info"></Badge>
+        </Tooltip>
     </div>
   ),
 };
