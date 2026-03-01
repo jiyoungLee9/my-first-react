@@ -71,7 +71,7 @@ const Dropdown = ({
             aria-expanded={isOpen}
         >
         <span>{selectedOption ? selectedOption.label : placeholder}</span>
-        <span className={`${styles.arrow} ${isOpen ? styles.isOpen : ''}`}></span>
+        <i className={`${styles.arrow} ${isOpen ? styles.isOpen : ''}`}></i>
         </button>
 
         {isOpen && (

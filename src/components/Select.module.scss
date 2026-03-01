@@ -1,0 +1,94 @@
+/* src/components/Select.module.scss */
+
+//Selectbox
+
+/* ### 일괄 제안 소스로 작성 중 */
+
+$arrow-icon : "data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6.16675L0 1.16675L1.16667 8.10623e-05L5 3.83341L8.83333 8.10623e-05L10 1.16675L5 6.16675Z' fill='%2364748B'/%3E%3C/svg%3E%0A";
+
+.selectContainer {
+    position: relative;
+    width: 100%;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.8rem;
+    @include font_set(sm);
+    color: $clr_text;
+}
+
+.trigger {
+    width: 100%;
+    height: 4.4rem;
+    padding: 0 1.6rem;
+    background-color: #fff;
+    border: 0.1rem solid $clr_line;
+    border-radius: $bd_radius;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    @include font_set();
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+        outline: none;
+        border-color: $clr_inp_focus;
+        box-shadow: 0 0 0 0.3rem rgba(0, 123, 255, 0.1);
+    }
+
+    &.isError { border-color: $clr_inp_error; }
+    &.isDisabled {
+        background-color: $clr_inp_disabled_bg;
+        cursor: not-allowed;
+        color: $clr_state_dis;
+    }
+}
+
+.optionsList {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 0.1rem solid $clr_line;
+    border-radius: $bd_radius;
+    box-shadow: 0 1.0rem 2.4rem rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin: 0;
+    padding: 0.6rem;
+    list-style: none;
+    max-height: 24.0rem;
+    overflow-y: auto;
+}
+
+.optionItem {
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    @include font_set(sm);
+    transition: background 0.1s;
+
+    &:hover { background-color: #f0f7ff; }
+
+    &.isSelected {
+        background-color: #e7f3ff;
+        color: $clr_inp_focus;
+        font-weight: 600;
+    }
+}
+
+.arrow {
+    display: inline-block;
+    width:2.0rem;
+    height:2.0rem;
+    background-image:url($arrow-icon);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 1.0rem auto;
+    transition: transform 0.2s;
+
+    &.isOpen { transform: rotate(180deg); }
+}
+
