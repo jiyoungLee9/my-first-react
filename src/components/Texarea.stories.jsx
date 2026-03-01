@@ -5,6 +5,7 @@ export default {
     title : 'Components/Textarea',
     component: Textarea,
     tags: ['autodocs'],   
+    /*
     argTypes: {
         // Storybook 컨트롤러 설정
         label: { control: 'text' },        
@@ -17,7 +18,8 @@ export default {
             description: '상태'
         }, 
         placeholder: { control: 'text' },
-    },    
+    },   
+    */ 
 };
 
 export const Default = {
@@ -28,8 +30,6 @@ export const Default = {
         props : {
             name:'textarea-message',
             id:'t-message',
-            cols:0,
-            row:0,
             maxLength:100,
             disabled : false,
             required : false,
@@ -46,8 +46,6 @@ export const Error = {
         props : {
             name:'textarea-message',
             id:'t-message2',
-            cols:0,
-            row:0,
             value:"",
             maxLength:100,
             disabled : false,
@@ -65,8 +63,6 @@ export const Disabled = {
         props : {
             name:'textarea-message',
             id:'t-message3',
-            cols:0,
-            row:0,
             value:"이 내용은 관리자만 수정할 수 있습니다.\n수정이 불가능합니다.",
             maxLength:100,
             disabled : true,
