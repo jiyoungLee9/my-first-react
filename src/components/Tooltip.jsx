@@ -1,10 +1,15 @@
 /* src/components/Tooltip.jsx */
-
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Tooltip.module.scss';
 
-/* ### 일괄 제안 소스로 작성 중 */
+/**
+ * UX 진행
+ * children 내 태그 mouseover 시 툴팁over 됨 
+ * 툴팁은 .bubble 로 absolute로 노출되고, 상, 하, 좌, 우 강제로 type으로 지정됨 (위치 자동지정은 library 사용 지향 예정)
+ * 툴팁은 최대 너비값, 최대 높이값 존재하며 scroll 처리됨
+ */
+
 
 const Tooltip = ({
     content,
@@ -50,6 +55,13 @@ const Tooltip = ({
     </div>
     );
 };
+
+// [전달값]
+// - content: (필수) 툴팁 .bubble 안에 들어갈 내용으로 .node로 지정함 (html 태그 및 string 모두 가능함)
+// - children : (필수) 툴팁이 붙을 대상. 단일 엘리먼트
+// - position : 툴팁의 위치 (대상 기준) top, bottom, left, right
+// - id : 유지시간
+// - className : 전역 스타일 확장용
 
 Tooltip.propTypes = {
     content: PropTypes.node.isRequired, // 툴팁 내용
