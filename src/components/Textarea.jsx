@@ -43,6 +43,7 @@ Textarea.propTypes = {
     label: PropTypes.string, //입력창 위의 제목
     error:PropTypes.bool, //에러 표시 여부
     errorMsg:PropTypes.string, // error true 일때 필요한 메세지
+    className: PropTypes.string,
 
     //props <textarea>요소 
     name:PropTypes.string.isRequired,

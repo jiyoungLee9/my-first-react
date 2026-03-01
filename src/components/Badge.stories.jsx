@@ -16,6 +16,8 @@ export const Default = {
     args:{
         badgeLabel:'기본 뱃지',
         type : "", //type 값 없음 기본임
+        id : "badge1",
+        name : "뱃지테스트 중",
         className:"",
     },
 };

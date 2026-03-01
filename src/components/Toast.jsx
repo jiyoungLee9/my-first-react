@@ -4,10 +4,9 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styles from './Toast.module.scss';
 
-/* ### 일괄 제안 소스로 작성 중 */
-
 /**
  * UX 진행
+ * 화면기준 우측 위치에 body 태그에 노출 후 사라짐 (Toast 외부 또는 x버튼 클릭 시 사라짐)
  */
 
 const Toast = ({
@@ -17,17 +16,20 @@ const Toast = ({
     duration = 3000, // 3초 뒤 자동 종료
     onClose,
 }) => {
+
   // 1. 자동 종료 타이머 (Side Effect 처리)
   useEffect(() => {
     if (isOpen) {
-      const timer = setTimeout(() => {
-        onClose();
-      }, duration);
 
-      // Cleanup: 컴포넌트가 사라지거나 재실행될 때 타이머 제거 (메모리 누수 방지)
-      return () => clearTimeout(timer);
+        //타이머
+        const timer = setTimeout(() => {
+            onClose();
+        }, duration);
+
+        // Cleanup: 컴포넌트가 사라지거나 재실행될 때 타이머 제거 (메모리 누수 방지)
+        return () => clearTimeout(timer);
     }
-  }, [isOpen, duration, onClose]);
+  }, [isOpen, duration, onClose]); //열림, 자동종료시간, 닫힐 때 작동됨
 
   if (!isOpen) return null;
 
@@ -56,12 +58,19 @@ const Toast = ({
   );
 };
 
+// [전달값]
+// - isOpen: 열림여부 (true/false)
+// - message : 토스메세지
+// - type : 토스타입 (success, error, info) : 성공, 에러, 알림
+// - duration : 유지시간
+// - onClose : 닫기 이벤트
+
 Toast.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  message: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['success', 'error', 'info']),
-  duration: PropTypes.number,
-  onClose: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
+    message: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['success', 'error', 'info']),
+    duration: PropTypes.number,
+    onClose: PropTypes.func.isRequired,
 };
 
 export default Toast;
