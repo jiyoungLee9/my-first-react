@@ -4,7 +4,7 @@
 
 import React, { useState } from 'react';
 import Toast from './Toast';
-import Button from './MyButton';
+import Button from './Button';
 
 export default {
     title: 'Components/Toast',

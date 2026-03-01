@@ -1,5 +1,5 @@
-// src/components/MyButton.stories.jsx
-import Button from './MyButton';
+// src/components/Button.stories.jsx
+import Button from './Button';
 
 // 1. 메타 정보: 이 컴포넌트가 스토리북 어디에 위치할지 정의
 export default {
@@ -26,7 +26,7 @@ export const Default = {
 
         disabled:false,
         className:"",
-        variant:"sub"
+        variant:""
     },
 };
 

@@ -1,6 +1,6 @@
 // src/App.jsx
 import { useState } from 'react';
-import MyButton from './components/MyButton'; 
+import Button from './components/Button'; 
 import RadioGroup from './components/RadioGroup';
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
             <div className={"container_box"}>
                 <h2>Button</h2>
                 <h3>클릭 버튼 <span className={"text_default"}>(클릭 횟수: <strong className={"text_bold"}>{count}</strong>)</span></h3>
-                <MyButton label="클릭하세요" onClick={handleClick} />
+                <Button label="클릭하세요" onClick={handleClick} />
             </div>      
         </>
 

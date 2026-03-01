@@ -4,7 +4,7 @@
 
 import React from 'react';
 import Tooltip from './Tooltip';
-import Button from './MyButton';
+import Button from './Button';
 import Badge from './Badge';
 
 export default {

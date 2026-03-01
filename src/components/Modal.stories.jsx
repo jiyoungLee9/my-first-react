@@ -1,7 +1,7 @@
 // src/components/Modal.stories.jsx
 import React, { useState } from 'react';
 import Modal from './Modal';
-import Button from './MyButton';
+import Button from './Button';
 
 export default {
     title: 'Components/Modal',
