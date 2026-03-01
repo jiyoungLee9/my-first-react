@@ -3,10 +3,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Dropdown.module.scss';
 
-/* ### 일괄 제안 소스로 작성 중 */
-
 /**
  * UX 진행
+ * <Button>태그를 통해서 <ul>태그 노출/미노출하여 select 태그처리처럼 보이게 정의함
  */
 
 const Dropdown = ({
@@ -59,7 +58,7 @@ const Dropdown = ({
 
     return (
     <div 
-        className={`${styles.dropdown} ${className}`.trim()} 
+        className={`${styles.dropdown_wrap} ${className}`.trim()} 
         ref={dropdownRef}
     >
         <button
@@ -70,8 +69,8 @@ const Dropdown = ({
             aria-haspopup="listbox"
             aria-expanded={isOpen}
         >
-        <span>{selectedOption ? selectedOption.label : placeholder}</span>
-        <i className={`${styles.arrow} ${isOpen ? styles.isOpen : ''}`}></i>
+            <span>{selectedOption ? selectedOption.label : placeholder}</span>
+            <i className={`${styles.arrow} ${isOpen ? styles.isOpen : ''}`}></i>
         </button>
 
         {isOpen && (
@@ -102,6 +101,14 @@ const Dropdown = ({
 };
 
 
+// [전달값]
+// - options 노출될 메뉴 (필수)
+//   label, value (메뉴명, 값)
+// - value: 값 (필수)
+// - onSelect : event select (필수)
+// - placeholder : placeholder 텍스트값
+// - disabled : disabled 여부 (true/false)
+// - className : 전역 스타일 확장용 
 Dropdown.propTypes = {
     options: PropTypes.arrayOf(
         PropTypes.shape({

@@ -25,9 +25,8 @@ const Checkbox = ({label, checked, disabled, className, ...props}) => {
 // - name: input name
 // - value : 값
 // - id : 고유id값
-// - readonly : readonly 여부 (true/false)
+// - readOnly : readonly 여부 (true/false)
 // - required : required 여부 (true/false)
-
 
 Checkbox.propTypes = {
     label : PropTypes.string.isRequired, //label (필)
@@ -36,10 +35,11 @@ Checkbox.propTypes = {
     onChange: PropTypes.func,
     className: PropTypes.string,
 
+    //...props
     name : PropTypes.string,
     value : PropTypes.string,
     id : PropTypes.string,
-    readonly : PropTypes.bool,
+    readOnly : PropTypes.bool,
     required : PropTypes.bool
 };
 

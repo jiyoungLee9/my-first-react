@@ -4,15 +4,14 @@
 
 $arrow-icon : "data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 6.16675L0 1.16675L1.16667 8.10623e-05L5 3.83341L8.83333 8.10623e-05L10 1.16675L5 6.16675Z' fill='%2364748B'/%3E%3C/svg%3E%0A";
 
-/* ### 일괄 제안 소스로 작성 중 */
-
-.dropdown {
+.dropdown_wrap {
     position: relative;
     display: inline-block;
     width:auto;
     min-width: 20.0rem; // 기본 너비
 }
 
+//button
 .trigger {
     width: 100%;
     padding: 0.8rem 1.6rem;
@@ -32,19 +31,21 @@ $arrow-icon : "data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7
         color: $clr_state_dis;
         background-color:$clr_inp_disabled_bg;
     }
+
+    .arrow {
+        display: inline-block;
+        width:2.0rem;
+        height:2.0rem;
+        background-image:url($arrow-icon);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 1.0rem auto;
+        transition: transform 0.2s;
+        &.isOpen { transform: rotate(180deg); }
+    }
 }
 
-.arrow {
-    display: inline-block;
-    width:2.0rem;
-    height:2.0rem;
-    background-image:url($arrow-icon);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 1.0rem auto;
-    transition: transform 0.2s;
-    &.isOpen { transform: rotate(180deg); }
-}
+
 
 .menu {
     position: absolute;
