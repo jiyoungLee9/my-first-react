@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SequentialTabs.module.scss';
 
-/* ### 일괄 제안 소스로 작성 중 */
-
 /**
  * UX 진행
+ * <button>,<div>로 버튼과 탭컨텐츠로 논리적 컨텐츠 순서에 맞게 태그 처리됨 (css order 이용하여 정의 함)
+ * 탭 버튼은 .isActive className으로 선택 구분됨
+ * 탭 컨텐츠는 모두 정의되어 있고 display none 정의되어 있고 .isActive 정의된 것은 display block 처리되어 있음
  */
 
 const SequentialTabs = ({ 
@@ -64,6 +65,13 @@ const SequentialTabs = ({
   );
 };
 
+
+// [전달값]
+// - items :tab목록 ( label, content ) (필수)
+// - defaultIndex : 기본열림 tab번호 / 기본 0 (number)
+// - onChange : tabButton click 이벤트 
+// - className : 스타일 확장용 (최상위)
+
 SequentialTabs.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -74,6 +82,13 @@ SequentialTabs.propTypes = {
   defaultIndex: PropTypes.number,
   onChange: PropTypes.func,
   className: PropTypes.string,
+};
+
+// 기본값
+SequentialTabs.defaultProps = {
+    defaultIndex: 0,
+    onChange: () => {},
+    className: '',
 };
 
 export default SequentialTabs;

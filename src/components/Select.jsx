@@ -3,10 +3,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Select.module.scss';
 
-/* ### 일괄 제안 소스로 작성 중 */
 
 /**
  * UX 진행
+ * <Button>태그를 통해서 <ul>태그 노출/미노출하여 select 태그처리처럼 보이게 정의함 
  */
 
 const Select = ({
@@ -85,6 +85,17 @@ const Select = ({
         </div>
     );
 };
+
+// [전달값]
+// - label: select 제목
+// - options :  (필수)클릭 시 노출되는 데이터 배열 (예: [{ label: '서울', value: 'seoul' }, ...])
+// - value : value
+// - onChange : onchange 이벤트
+// - placeholder : placeholder 정의
+// - disabled : 사용불가 여부 (true/false)
+// - error : error 여부 (true/false)
+// - id : id 고유값
+// - className : 전역 스타일 확장용  
 
 Select.propTypes = {
     label: PropTypes.string,

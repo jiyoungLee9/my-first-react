@@ -61,7 +61,6 @@ const Modal = ({
 }
 
 // [전달값]
-// props ====
 // - isOpen : modal 오픈여부 (true/false)
 // - title :  modal 제목
 // - children : modal 내용 (react 기본예약어)

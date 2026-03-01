@@ -66,7 +66,7 @@ const Tabs = ({
 }
 
 /**
- * 선언 값
+ * [전달 값]
  *  items : tab목록
  *  defaultIndex : 기본열림 tab번호 / 기본 0 (number)
  *  className : (전역) 스타일 확장용 (최상위)
