@@ -1,17 +1,14 @@
 // src/components/Modal.jsx
 import React, { useEffect }  from "react";
+import PropTypes from 'prop-types';
 import { createPortal }  from "react-dom";
 import styles from './Modal.module.scss';
 
-// [전달값]
-// props ====
-// - isOpen : modal 오픈여부 (true/false)
-// - title :  modal 제목
-// - children : modal 내용 (react 기본예약어)
-// - footer :  modal 하단 버튼
-// - className : 스타일 확장용 (최상위)
-// - onClose : modal 닫기이벤트 
-// ...props : 기타
+/**
+ * UX 진행
+ * <body> 태그 마지막에 .modal_wrap 을 생성함
+ * .is_modal_open 을 통해서 열림 처리 정의 / .is_modal_open 삭제 시 컴포넌트 사라짐
+ */
 
 const Modal = ({
     isOpen, title, children, footer, className, onClose, ...props
@@ -62,5 +59,32 @@ const Modal = ({
         document.body //modal 랜더링 위치
     );
 }
+
+// [전달값]
+// props ====
+// - isOpen : modal 오픈여부 (true/false)
+// - title :  modal 제목
+// - children : modal 내용 (react 기본예약어)
+// - footer :  modal 하단 버튼
+// - className : 스타일 확장용 (최상위)
+// - onClose : modal 닫기이벤트 
+// ...props : 기타
+
+Modal.propTypes = {
+    isOpen : PropTypes.bool,
+    title : PropTypes.string.isRequired, //modal 제목 (필수)
+    children : PropTypes.node.isRequired, //modal 컨텐츠 (필수)
+    footer : PropTypes.node, //modal 하단버튼 (html 태그 정의)
+    onClose : PropTypes.func, //modal 닫기이벤트 
+    className: PropTypes.string,
+};
+
+// 기본값
+Modal.defaultProps = {
+    title: "Modal title",
+    children : "Modal Contents",
+    onClose: () => {},
+    className: '',
+};
 
 export default Modal;
