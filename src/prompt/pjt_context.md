@@ -60,3 +60,9 @@ const Template = (args) => {
   // ... useEffect로 args 동기화 ...
   return <Component {...args} value={val} onChange={setVal} />;
 };
+
+### Component UX표현을 위한 Props 정의 <br />
+
+모든 컴포넌트는 PropTypes 를 사용하여 Props의 값을 정의함.
+필요 시 UX흐름을 주석표기하고, 그에 따라 Props의 정보를 주석으로 설명한다.
+Storybook도 최대한 PropTypes를 기본값으로 사용하지만, 필요에 따라 argTypes을 부여하고 주석설명함
