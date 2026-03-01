@@ -1,7 +1,6 @@
 // components/Checkbox.stories.jsx
 //react 표준 사용
 import React, { useState, useEffect } from 'react';
-
 import Checkbox from "./Checkbox" ;
 
 //storybook 전용 훅 (클릭 동작을 흉내 내기 위한 훅)
@@ -11,6 +10,10 @@ export default {
     title : "Components/Checkbox",
     component: Checkbox,
     tags: ['autodocs'],
+    parameters: {
+        layout: 'padded',
+    },
+    /*    
     argTypes : {
         label : { control: "text"},
         checked : {control : "boolean"},
@@ -18,6 +21,7 @@ export default {
         className : {control : "text"},
         onChange : {action : "changed"}     
     }
+    */
 };
 
 //react 표준 useState 사용 시
@@ -54,6 +58,7 @@ export const Default = {
         onChange: () => {}
     },
     render : (args) => <UI_Template {...args} />,
+    
     // Storybook에서 클릭했을 때 실제로 체크가 바뀌는 것처럼 보이게 하는 설정
     /* storybook 전용 훅 사용 시
     render: function Render(args) {

@@ -97,9 +97,9 @@ Tabs.propTypes = {
 
 // 기본값
 Tabs.defaultProps = {
-  defaultIndex: 0,
-  onChange: () => {},
-  className: '',
+    defaultIndex: 0,
+    onChange: () => {},
+    className: '',
 };
 
 export default Tabs;

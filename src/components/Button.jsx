@@ -39,7 +39,14 @@ Button.propTypes = {
     variant : PropTypes.oneOf(['primary', 'sub']),
     size : PropTypes.oneOf(['sm', 'lg']),
     disabled: PropTypes.bool,
-    onClick: PropTypes.func   
+    onClick: PropTypes.func 
+};
+
+// 기본값
+Button.defaultProps = {
+    label: "버튼",
+    onClick: () => {},
+    className: '',
 };
 
 export default Button;
