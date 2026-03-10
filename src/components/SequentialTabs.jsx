@@ -3,12 +3,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './SequentialTabs.module.scss';
 
-/**
- * UX 진행
- * <button>,<div>로 버튼과 탭컨텐츠로 논리적 컨텐츠 순서에 맞게 태그 처리됨 (css order 이용하여 정의 함)
- * 탭 버튼은 .isActive className으로 선택 구분됨
- * 탭 컨텐츠는 모두 정의되어 있고 display none 정의되어 있고 .isActive 정의된 것은 display block 처리되어 있음
- */
+// UX 진행
+//  <button>,<div>로 버튼과 탭컨텐츠로 논리적 컨텐츠 순서에 맞게 태그 처리됨 (css order 이용하여 정의 함)
+// 탭 버튼은 .isActive className으로 선택 구분됨
+// 탭 컨텐츠는 모두 정의되어 있고 display none 정의되어 있고 .isActive 정의된 것은 display block 처리되어 있음
 
 const SequentialTabs = ({ 
   items = [], 

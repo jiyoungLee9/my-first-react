@@ -18,7 +18,7 @@
     pointer-events: auto; // 토스트 자체는 클릭 가능
     min-width: 30.0rem;
     padding: 0.8rem 2.4rem;
-    border-radius: $bd_radius;
+    border-radius: $radius-md;
     background-color: #fff;
     @include default-shadow;
     display: flex;
@@ -27,13 +27,13 @@
     animation: slide-in 0.3s ease-out;
 
     //type별로
-    &.success { border-left: $bd_radius solid #059669; }
-    &.error { border-left: $bd_radius solid $clr_red; }
-    &.info { border-left: $bd_radius solid $clr_blue; }
+    &.success { border-left: $radius-md solid #059669; }
+    &.error { border-left: $radius-md solid $ref-red-500; }
+    &.info { border-left: $radius-md solid $ref-blue-600; }
 }
 
 .message {
-    @include font_set();
+    @include font-set();
     color: #333;
     font-weight: 500;
 }
@@ -45,7 +45,7 @@
     line-height: 2.4rem;
     font-weight: 300;
     cursor: pointer;
-    color: #999;
+    color: $text-disabled;
     padding: 0 0 0 1.0rem;
     &:hover { color: #333; }
 }

@@ -10,7 +10,6 @@ $padding: 0.2rem;
     display: block;
     cursor: pointer;
     user-select: none;
-    vertical-align: middle;
 
     &.is_disabled {
         cursor: not-allowed;
@@ -46,7 +45,7 @@ $padding: 0.2rem;
             width:$switch-width;
             height:$switch-height;
             padding:$padding;
-            background-color:$clr_switch_bg;
+            background-color:$ref-slate-300;
             border-radius: 999rem;
             @include default-transition(background-color);            
             &::after {
@@ -62,8 +61,7 @@ $padding: 0.2rem;
         }
         .label_txt {
             display: inline-block;
-            @include font_set();
-            @include font_weight();
+            @include font-set();
             vertical-align: middle;
         }
     }
@@ -71,11 +69,11 @@ $padding: 0.2rem;
     input[type="checkbox"]:checked {
         & + .label_wrap {
             .label_track  {
-                background-color:$clr_main;
+                background-color:$ref-blue-500;
                 justify-content: flex-end;
             }
             .label_txt {
-                @include font_weight(600);
+                font-weight:600;
             }   
         }
     }
@@ -83,7 +81,7 @@ $padding: 0.2rem;
     input[type="checkbox"]:hover {
         & + .label_wrap {
             & + .label_track  {
-                background-color:$clr_inp_hover;      
+                background-color:$action-hover;      
             }
         }
     }

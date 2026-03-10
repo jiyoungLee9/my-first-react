@@ -7,6 +7,7 @@ import Select from './Select';
 
 export default {
     title: 'Components/Select',
+    tags: ['autodocs'],
     component: Select,
 };
 

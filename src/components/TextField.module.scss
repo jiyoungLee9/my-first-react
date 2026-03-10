@@ -20,16 +20,16 @@
         flex-wrap: nowrap;
         align-items: center;        
         gap:0 0.6rem;
-        color:$clr_basic;
-        font-size:$f_size;
-        line-height: $f_line;
-        @include font_weight(600);
+        color:$ref-slate-900;;
+        font-size:$font-size-base;
+        line-height: $line-height-base;
+        font-weight:600;
         &.is_req {
             &::after {
                 content:" * ";
                 display:block;
-                @include font_set(sm);
-                color:$clr_red;
+                @include font-set(sm);
+                color:$ref-red-500;
             }
         }        
     }
@@ -37,34 +37,34 @@
     input {
         display: inline-block;
         padding:0.8rem 1.6rem;
-        font-size:$f_size;
-        line-height: $f_line;        
-        @include inp_state();
-        border-radius: $bd_radius;
+        font-size:$font-size-base;
+        line-height: $line-height-base;        
+        @include inp-state();
+        border-radius: $radius-md;
         &:focus {
-            border-color:$clr_inp_focus;
+            border-color:$input-focus-border;
         }
         &:disabled,
         &[disabled] {
-            @include inp_state(disabled);
+            @include inp-state(disabled);
         }
         
         &:read-only,
         &[readonly] {
-            @include inp_state(readonly);
+            @include inp-state(readonly);
         }       
     }
 
     /* msg노출은 jsx에서 직접 data에 따라 선언 여부 처리함 / css에서 컨트롤하는 부분은 제거함 */
     .msg_error {
         display: block;        
-        @include font_set(sm);
-        color:$clr_state_error;
+        @include font-set(sm);
+        color:$text-error;
     }
 
     &.is_error {
         input {
-            @include inp_state(error);
+            @include inp-state(error);
         }       
     }    
 }

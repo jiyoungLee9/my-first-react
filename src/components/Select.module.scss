@@ -14,8 +14,8 @@ $arrow-icon : "data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7
 .label {
     display: block;
     margin-bottom: 0.8rem;
-    @include font_set(sm);
-    color: $clr_text;
+    @include font-set(sm);
+    color: $text-secondary;
 }
 
 .trigger {
@@ -23,26 +23,26 @@ $arrow-icon : "data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7
     height: 4.4rem;
     padding: 0 1.6rem;
     background-color: #fff;
-    border: 0.1rem solid $clr_line;
-    border-radius: $bd_radius;
+    border: 0.1rem solid $ref-slate-300;
+    border-radius: $radius-md;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    @include font_set();
+    @include font-set();
     transition: border-color 0.2s, box-shadow 0.2s;
 
     &:focus {
         outline: none;
-        border-color: $clr_inp_focus;
+        border-color: $input-focus-border;
         box-shadow: 0 0 0 0.3rem rgba(0, 123, 255, 0.1);
     }
 
-    &.isError { border-color: $clr_inp_error; }
+    &.isError { border-color: $text-error; }
     &.isDisabled {
-        background-color: $clr_inp_disabled_bg;
+        background-color: $bg-disabled;
         cursor: not-allowed;
-        color: $clr_state_dis;
+        color: $text-disabled;
     }
 }
 
@@ -52,8 +52,8 @@ $arrow-icon : "data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7
     left: 0;
     width: 100%;
     background: #fff;
-    border: 0.1rem solid $clr_line;
-    border-radius: $bd_radius;
+    border: 0.1rem solid $ref-slate-300;
+    border-radius: $radius-md;
     box-shadow: 0 1.0rem 2.4rem rgba(0, 0, 0, 0.1);
     z-index: 1000;
     margin: 0;
@@ -67,14 +67,14 @@ $arrow-icon : "data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7
     padding: 0.8rem 1.6rem;
     border-radius: 0.6rem;
     cursor: pointer;
-    @include font_set(sm);
+    @include font-set(sm);
     transition: background 0.1s;
 
     &:hover { background-color: #f0f7ff; }
 
     &.isSelected {
         background-color: #e7f3ff;
-        color: $clr_inp_focus;
+        color: $input-focus-border;
         font-weight: 600;
     }
 }

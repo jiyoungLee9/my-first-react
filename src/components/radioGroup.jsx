@@ -2,10 +2,8 @@
 import PropTypes from 'prop-types';
 import styles from './radioGroup.module.scss';
 
-/**
- * UX 진행
- * <p> 태그내 <input radio>로 다수 존재하는 group 정의 됨
- */
+// UX진행
+// <p> 태그내 <input radio>로 다수 존재하는 group 정의 됨
 
 const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, props }) => {
     return (
@@ -55,7 +53,6 @@ const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, props }) => {
 // - disabled : 사용불가 여부 (true/false)
 // - readonly : readonly 여부 (true/false)
 // - required : required 여부 (true/false)
-
 
 RadioGroup.propTypes = {
     grpName : PropTypes.string, //라디오그룹 다수 존재할것을 감안하여 각 별도 이름

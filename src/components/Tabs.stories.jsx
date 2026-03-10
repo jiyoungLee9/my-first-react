@@ -6,6 +6,7 @@ import Tabs from "./Tabs";
 export default {
     title: 'Components/Tabs',
     component: Tabs,
+    tags: ['autodocs'],
     parameters: {
         layout: 'padded',
     },

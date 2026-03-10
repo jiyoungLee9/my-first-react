@@ -7,6 +7,7 @@ import SequentialTabs from './SequentialTabs';
 
 export default {
   title: 'Components/SequentialTabs',
+  tags: ['autodocs'],
   component: SequentialTabs,
 };
 

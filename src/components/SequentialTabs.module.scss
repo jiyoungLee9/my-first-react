@@ -7,7 +7,7 @@
 .container {
     display: flex;
     flex-wrap: wrap; // 버튼들은 위로, 컨텐츠는 아래로 떨어뜨리기 위함
-    border-bottom: 0.2rem solid #eee;
+    border-bottom: 0.2rem solid $border-default;
     position: relative;
 }
 
@@ -16,22 +16,21 @@
     cursor: pointer;
     background: none;
     border: none;
-    @include font_set();
-    font-weight: 400;
-    color: $clr_text;
+    @include font-set();
+    color: $text-secondary;
     border-bottom: 0.4rem solid transparent;
     margin-bottom: -0.4rem; // 컨테이너 border와 겹치게 처리
     transition: all 0.2s;
     order: 1; // 버튼들을 시각적으로 앞 순서로 배치
 
     &:hover {
-        color: $clr_basic;
+        color: $ref-slate-900;
     }
 
     &.isActive {
         font-weight: 600;
-        color: $clr_main;
-        border-bottom: 0.4rem solid $clr_main;
+        color: $ref-blue-500;
+        border-bottom: 0.4rem solid $ref-blue-500;
     }
 }
 
@@ -40,7 +39,7 @@
     order: 2; // 컨텐츠들을 시각적으로 버튼들 뒤(아래)로 배치
     padding: 2.4rem 0;
     display: none;
-    @include font_set();
+    @include font-set();
     animation: slide-up 0.3s ease-out;
 
     &.isActive {

@@ -3,12 +3,10 @@ import React, { useState } from "react";
 import PropTypes from 'prop-types';
 import styles from "./Tabs.module.scss";
 
-/**
- * UX 진행
- * 모든 TAB패널(.tab_panel) 중 첫번째 패널( index 0)은 열려있음
- * TAB버튼(.tab)이 .is_active 정의로 선택여부 표시됨
- * TAB버튼(.tab) 클릭 시 'aria-controls' 에 정의된 id TAB패널(.tab_panel) 내용 content가 변경되면서 opacity로 노출됨
- */
+// UX 진행
+// 모든 TAB패널(.tab_panel) 중 첫번째 패널( index 0)은 열려있음
+// TAB버튼(.tab)이 .is_active 정의로 선택여부 표시됨
+// TAB버튼(.tab) 클릭 시 'aria-controls' 에 정의된 id TAB패널(.tab_panel) 내용 content가 변경되면서 opacity로 노출됨
 
 const Tabs = ({     
     items = [], 

@@ -14,19 +14,19 @@
     height:2.4rem;    
     border-radius: 50% 50%;;
     background-color: #fff;
-    border:0.2rem solid $clr_darkgray;
+    border:0.2rem solid $ref-slate-500;
     vertical-align: middle;
-    @include default-trans();
+    @include default-transition();
     &::after {
         content: "!";
         display: inline-block;
         width:100%;
-        @include font_set(sm);
+        @include font-set(sm);
         font-weight: 900;
         text-align:center;
         vertical-align: middle;
-        color:$clr_darkgray;
-        @include default-trans();
+        color:$ref-slate-500;
+        @include default-transition();
     }
     &:hover {
         border-color:#000;
@@ -39,15 +39,15 @@
 
     //type_error 일때
     &.type_error {
-        background-color:$clr_red;
-        border-color:$clr_red;
-        opacity: 0.84;
+        background-color:$ref-red-500;
+        border-color:$ref-red-500;
+        opacity: $ref-opacity-normal;
         &::after { 
             color: #fff;
         }
         &:hover {
-            background-color:$clr_red;
-            border-color:$clr_red;
+            background-color:$ref-red-500;
+            border-color:$ref-red-500;
             &::after { 
                 color: #fff;
             }            
@@ -56,15 +56,15 @@
 
     //type_info 일때
     &.type_info { 
-        border-color:$clr_blue;
-        background-color:$clr_blue;
-        opacity: 0.84;
+        border-color:$ref-blue-600;
+        background-color:$ref-blue-600;
+        opacity: $ref-opacity-normal;
         &::after { 
            color: #fff; 
         }
         &:hover {
-            border-color:$clr_blue;
-            background-color:$clr_blue;
+            border-color:$ref-blue-600;
+            background-color:$ref-blue-600;
             &::after { 
                 color: #fff;
             }            

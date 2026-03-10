@@ -29,14 +29,12 @@
                     width:2.0rem;
                     height:2.0rem;
                     border-radius: 50% 50%;
-                    border:0.2rem solid $clr_inp_default;
+                    border:0.2rem solid $border-default;
                     background-color:#fff;
                 }
                 & span {
-                    font-size:1.6rem;
-                    line-height:2.4rem;
-                    color:$clr_basic;
-                    font-weight:400;
+                    @include font-set();
+                    color:$ref-slate-900;
                 }
 
             }
@@ -44,7 +42,7 @@
             &:checked {
                 & + label {
                      &::before {
-                        border:0.6rem solid  $clr_main;
+                        border:0.6rem solid  $ref-blue-500;
                      }
                     & span {
                         font-weight: 600;
@@ -55,10 +53,10 @@
             &:disabled {
                 & + label {
                      &::before {
-                        border:0.2rem solid $clr_inp_disabled;
+                        border:0.2rem solid $border-disabled;
                      }
                     & span {
-                        color:$clr_state_dis;
+                        color:$text-disabled;
                     }                     
                 }
             }            

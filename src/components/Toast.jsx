@@ -4,10 +4,8 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styles from './Toast.module.scss';
 
-/**
- * UX 진행
- * 화면기준 우측 위치에 body 태그에 노출 후 사라짐 (Toast 외부 또는 x버튼 클릭 시 사라짐)
- */
+// UX 진행
+// 화면기준 우측 위치에 body 태그에 노출 후 사라짐 (Toast 외부 또는 x버튼 클릭 시 사라짐)
 
 const Toast = ({
     isOpen = false,

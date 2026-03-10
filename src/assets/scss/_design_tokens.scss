@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+//* @FileName :  _design_tokens.scss
+//* @Date : 20285-03-05
+//* @작성자 : LEE JI YOUNG
+//* @설명 : 기존 _var-value.scss 를 보다 design tokens 화 방식을 위해 신규리팩토링화 함
+
+@charset "utf-8";
+
+/**
+ * [1] Global Tokens (Primitives)
+ */
+
+// Colors - Slate (기존 $clr_text 기반)
+$ref-slate-50:  #f8fafc;
+$ref-slate-100: #f1f5f9;
+$ref-slate-300: #cbd5e1; // clr_line
+$ref-slate-400: #94a3b8;
+$ref-slate-500: #64748b;
+$ref-slate-700: #334155;
+$ref-slate-900: #0f172a; // clr_basic
+
+// Colors - Brand (기존 $clr_main 기반)
+$ref-blue-50:  #eff6ff;
+$ref-blue-500: #2d96ff; // Main
+$ref-blue-600: #0067ce; // Blue
+$ref-blue-700: #0064c9; // Focus
+$ref-blue-900: #0a0099; 
+
+// Colors - Status
+$ref-red-500:    #f43f5e;
+$ref-red-700:    #e02535;
+$ref-emerald-500: #10b981;
+$ref-amber-500:   #ea8b00;
+
+// Duration
+$ref-duration-fast: 0.24s;
+$ref-duration-normal: 0.35s;
+
+// Shadow
+$ref-shadow-default: 0 0 0.8rem 0.3rem rgba(0, 0, 0, 0.08);
+
+// Opacity
+$ref-opacity-normal:0.84;
+
+
+/**
+ * [2] Semantic Tokens (The "Decision" Layer)
+ */
+
+// Typography & Spacing
+$font-family-base: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Backgrounds
+$bg-canvas: #ffffff;
+$bg-disabled: $ref-slate-100;
+$bg-error: #fffbfb;
+$bg-success: #f9fefc;
+
+// Text Colors
+$text-primary: $ref-slate-900;
+$text-secondary: $ref-slate-500;
+$text-disabled: $ref-slate-400;
+$text-placeholder: $ref-slate-400;
+$text-error: $ref-red-700;
+$text-success: #047857;
+
+// Border Colors
+$border-default: $ref-slate-300;
+$border-active: $ref-blue-500;
+$border-error: $ref-red-500;
+$border-disabled: $ref-slate-300;
+
+// Interactive (Action)
+$action-primary: $ref-blue-500;
+$action-hover: $ref-slate-500;
+
+// Scroll
+$scrollbar-width: 0.6rem;
+$scrollbar-bg: #ffffff;
+
+/**
+ * [3] Component Tokens (Option)
+ */
+
+// Inputs (TextField, Select 등 공통)
+$input-height: 4.8rem;
+$input-radius: 0.8rem;
+$input-border: $border-default;
+$input-focus-border: $ref-blue-700;
+
+// Radii
+$radius-sm: 0.4rem;
+$radius-md: 0.8rem;  // 기본
+$radius-lg: 1.6rem;
+$radius-xl: 2.4rem;
+
+// Typography (기존 변수 유지하며 확장)
+$font-size-base: 1.6rem;
+$line-height-base: 2.4rem;
+

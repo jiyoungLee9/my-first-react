@@ -1,70 +1,70 @@
 /* src/components/Button.module.scss */
 
 //button
-@mixin btn_basic() {
+@mixin button-basic() {
     display: inline-block;
     padding: 1.2rem 2.0rem;
     border-radius: 0.8rem;
-    @include font_set();
+    @include font-set();
     cursor: pointer;
 }
-@mixin btn_disabled() {
-    border-color:$clr_inp_disabled;
-    background-color:$clr_inp_disabled_bg;
-    color:$clr_state_dis;
+@mixin button-disabled() {
+    border-color:$border-disabled;
+    background-color:$bg-disabled;
+    color:$text-disabled;
 }
 
 .btn {
-    @include btn_basic();
-    background-color: $clr_main;
+    @include button-basic();
+    background-color: $ref-blue-500;
     color:#fff;
     &:hover {
-        background-color: #217cd6;
+        background-color: $ref-blue-700;
     }
     .btn_txt {
         font-weight: 600;
     }
     &:disabled {
-        @include btn_disabled();
+        @include button-disabled();
     }    
 }
 
 .btn_primary {
-    @include btn_basic();
-    background-color: $clr_blue;
+    @include button-basic();
+    background-color: $ref-blue-600;
     color:#fff;
     &:hover {
-        background-color: #004992;
+        background-color: $ref-blue-900;
     }
     .btn_txt {
         font-weight: 600;
     }
     &:disabled {
-        @include btn_disabled();
+        @include button-disabled();
     }    
 }
 
 .btn_sub {
-    @include btn_basic();
-    background-color: $clr_darkgray;
+    @include button-basic();
+    background-color: $ref-slate-500;
     color:#fff;
     &:hover {
-        background-color: #4b4e57;
+        background-color:  $ref-slate-700;
     }
     .btn_txt {
         font-weight: 600;
     }
     &:disabled {
-        @include btn_disabled();
+        @include button-disabled();
     }      
 }
 
 .size_sm { 
     padding:0.2rem 1.6rem;
-    @include font_set(sm);
+    @include font-set(sm);
 }
 .size_lg { 
     padding:0.6rem 2.4rem;
-    @include font_set(lg);
+    @include font-set(lg);
 }
 

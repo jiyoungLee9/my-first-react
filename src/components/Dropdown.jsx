@@ -3,10 +3,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Dropdown.module.scss';
 
-/**
- * UX 진행
- * <Button>태그를 통해서 <ul>태그 노출/미노출하여 select 태그처리처럼 보이게 정의함
- */
+// UX 진행
+// <Button>태그를 통해서 <ul>태그 노출/미노출하여 select 태그처리처럼 보이게 정의함
 
 const Dropdown = ({
     options = [],

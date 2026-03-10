@@ -1,32 +1,68 @@
-@mixin default-shadow(){
-    box-shadow: 0 0 0.8rem 0.3rem rgba(0,0,0,0.08);  
+@charset "utf-8";
+
+// 1. Shadow & Transition (유틸리티)
+@mixin default-shadow() {
+    //box-shadow: 0 0 0.8rem 0.3rem rgba(0,0,0,0.08);  
+    box-shadow: $ref-shadow-default;  
 }
 
-@mixin default-trans( $target:null ){
-    @if ( $target ){
-        transition: #{$target} .35s ease-in-out;
-    }@else{
-        transition: all .35s ease-in-out;
-    }
+@mixin default-transition($target: all, $speed: normal) {
+    $duration: if($speed == fast, $ref-duration-fast, $ref-duration-normal);
+    transition: #{$target} $duration ease-in-out;
 }
 
-@mixin default-transition( $target_trans:null ){
-    @if ( $target_trans) {
-        transition: $target_trans 0.24s ease-in-out;
-    }@else{
-        transition: all 0.24s ease-in-out;
-    }
-    
-}
-
-@mixin scroll-custom( $target_area ){
-    #{$target_area}::-webkit-scrollbar { width: 0.6rem; height:0.6rem;}     
-    #{$target_area}::-webkit-scrollbar-track { -webkit-border-radius: 0.3rem; border-radius: 0.3rem; background:#fff; }     
-    #{$target_area}::-webkit-scrollbar-thumb { -webkit-border-radius: 0.3rem; border-radius: 0.3rem; background:$clr_main; }     
-    #{$target_area}::-webkit-scrollbar-thumb:window-inactive { background-color: $clr_main; }
+// 2. Scrollbar (커스텀 요소)
+@mixin scroll-custom($target_area) {
+    #{$target_area}::-webkit-scrollbar { width: $scrollbar-width; height: $scrollbar-width; }     
+    #{$target_area}::-webkit-scrollbar-track { border-radius: $radius-sm; background: $scrollbar-bg; }     
+    #{$target_area}::-webkit-scrollbar-thumb { border-radius: $radius-sm; background: $action-primary; }   
+    #{$target_area}::-webkit-scrollbar-thumb:window-inactive { background-color: $ref-blue-500; }
     #{$target_area}::-webkit-scrollbar-button:start { background:transparent }
-    #{$target_area}::-webkit-scrollbar-button:end { background:transparent }   
+    #{$target_area}::-webkit-scrollbar-button:end { background:transparent }         
 }
+
+
+// 3. Typography (MDX 대응 핵심)
+@mixin font-set($size: null, $weight: null) {
+    font-family: $font-family-base;
+    
+    // Size Logic
+    @if ($size == sm) {
+        font-size: 1.4rem; line-height: 2.0rem;
+    } @else if ($size == lg) {
+        font-size: 2.0rem; line-height: 2.8rem;
+    } @else if ($size == xl) {
+        font-size: 2.4rem; line-height: 3.0rem;      
+    } @else {
+        font-size: $font-size-base; line-height: $line-height-base;
+    }
+
+    // Weight Logic
+    font-weight: if($weight, #{$weight}, $font-weight-regular);
+}
+
+// 4. Input States (컴포넌트 로직)
+@mixin inp-state($state: default) {
+    @if ($state == disabled) {
+        background-color: $bg-disabled;
+        border-color: $border-default;
+        color: $text-disabled;
+    } @else if ($state == error) {
+        background-color: $bg-error;
+        border-color: $border-error;
+        color: $text-error;        
+    } @else if ($state == readonly) {
+        background-color: $bg-disabled;
+        border: 0.1rem solid $border-default;
+        color: $text-secondary;
+    } @else {
+        background-color: $bg-canvas;
+        border: 0.1rem solid $border-default;
+        color: $text-primary;
+    }
+}
+
+/** 기존  _mixin.scss */
 
 @mixin font_pre( $target_weight ){
     font-family: 'Pretendard', 'Apple SD Gothic Neo', 'AppleGothic', sans-serif;
@@ -36,6 +72,7 @@
         font-weight:400;   
     }
 }
+
 @mixin font_weight( $target_weight2:null ){
     @if ( $target_weight2 ){        
         font-weight:#{$target_weight2};
@@ -55,28 +92,28 @@
         font-size:2.4rem;
         line-height:3.0rem;      
     } @else {
-        font-size:$f_size;
-        line-height:$f_line;
+        font-size:$font-size-base;
+        line-height:$line-height-base;
     }    
 }
 
 @mixin inp_state ( $target_state:null ){
     @if ( $target_state == disabled ) {
-        background-color:$clr_inp_disabled_bg;
-        border-color:$clr_inp_disabled;
-        color:$clr_state_dis;
+        background-color:$bg-disabled;
+        border-color:$border-disabled;
+        color:$text-disabled;
     } @else if ( $target_state == readonly ) {
-        background-color:$clr_inp_read_bg;
-       border-color:$clr_inp_disabled;
-        color:$clr_state_de;
+        background-color:$bg-disabled;
+        border-color:$border-disabled;
+        color:$text-secondary;
     } @else if ( $target_state == error ) {
-        background-color:$clr_inp_error_bg;
-        border-color:$clr_inp_error;
-        color:$clr_state_error;        
+        background-color:$bg-error;
+        border-color:$border-error;
+        color:$text-error;        
     } @else {
         background-color:#ffffff;
-        border:0.1rem solid $clr_inp_default;
-        color:$clr_state_de;
+        border:0.1rem solid $input-border;
+        color:$text-secondary;
     }
 }
 

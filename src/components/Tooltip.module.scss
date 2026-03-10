@@ -18,8 +18,8 @@
     padding: 0.8rem 1.6rem;
     background-color: rgba(0, 0, 0, 0.85);
     color: #fff;
-    @include font_set(sm);
-    border-radius: $bd_radius;
+    @include font-set(sm);
+    border-radius: $radius-md;
     word-wrap: nowrap;
     word-break: keep-all;
     text-align: center;

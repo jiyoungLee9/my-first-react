@@ -3,13 +3,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Tooltip.module.scss';
 
-/**
- * UX 진행
- * children 내 태그 mouseover 시 툴팁over 됨 
- * 툴팁은 .bubble 로 absolute로 노출되고, 상, 하, 좌, 우 강제로 type으로 지정됨 (위치 자동지정은 library 사용 지향 예정)
- * 툴팁은 최대 너비값, 최대 높이값 존재하며 scroll 처리됨
- */
-
+// UX 진행
+// children 내 태그 mouseover 시 툴팁over 됨 
+// 툴팁은 .bubble 로 absolute로 노출되고, 상, 하, 좌, 우 강제로 type으로 지정됨 (위치 자동지정은 library 사용 지향 예정)
+// 툴팁은 최대 너비값, 최대 높이값 존재하며 scroll 처리됨
 
 const Tooltip = ({
     content,

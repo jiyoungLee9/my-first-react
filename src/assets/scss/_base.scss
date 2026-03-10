@@ -28,10 +28,10 @@ body { /*width:100%; height:100%;*/ @include font_pre(400); letter-spacing:0; ov
 a, a:focus, a:hover {text-decoration:none; outline-color: #000;}
 a, button {cursor:pointer;}
 a:hover, a:focus, button:hover, button:focus {cursor:pointer;}
-button { background-color: transparent; padding:0; @include default-trans;}
+button { background-color: transparent; padding:0; @include default-transition;}
 button, input[type="submit"], input[type="cancle"], input[type="button"] {@include font_pre(400);  letter-spacing:-0.024em; border:0 none;}
-input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="week"], textarea, select, input[type="checkbox"], input[type="radio"], label {display:inline-block; margin:0; @include font_pre(300); font-size:$f_size; line-height:$f_line; letter-spacing:-0.024em;}
-input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="week"], textarea, select {@include default-trans('border-color, background-color'); border:0.1rem solid $clr_line; border-radius:0.4rem;}
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="week"], textarea, select, input[type="checkbox"], input[type="radio"], label {display:inline-block; margin:0; @include font_pre(300); font-size:$font-size-base; line-height:$line-height-base; letter-spacing:-0.024em;}
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], input[type="week"], textarea, select {@include default-transition('border-color, background-color'); border:0.1rem solid $ref-slate-300; border-radius:0.4rem;}
 input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button, input[type="week"]::-webkit-inner-spin-button { -webkit-appearance: none; -moz-appearance: none; appearance: none; }
 input[type="button"]:focus, input[type="button"]:hover, input[type="submit"]:focus, input[type="submit"]:hover {cursor:pointer;}
 select { -webkit-appearance: none; -moz-appearance: none; appearance : none;}
@@ -71,14 +71,14 @@ caption.hdn { position:relative!important; text-indent:-100000px; font-size:0;} 
 .ta_r { text-align:right !important;}
 
 //txt color
-$t_clr_list: (
-    'blue': $clr_blue,
-    'red': $clr_red,
-    'yellow': $clr_yellow,
-    'gray': $clr_darkgray,
+$text-color-list: (
+    'blue': $ref-blue-500,
+    'red': $ref-red-500,
+    'yellow': $ref-amber-500,
+    'gray': $ref-slate-500,
 );
-@each $name_c, $color_c in $t_clr_list {
-    .tc_#{$name_c} { color : $color_c !important;}
+@each $name-c, $color_c in $text-color-list {
+    .tc_#{$name-c} { color : $color_c !important;}
 }
 
 //margin top, padding top

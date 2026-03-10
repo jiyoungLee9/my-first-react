@@ -8,6 +8,7 @@ import Button from './Button';
 
 export default {
     title: 'Components/Toast',
+    tags: ['autodocs'],
     component: Toast,
 };
 

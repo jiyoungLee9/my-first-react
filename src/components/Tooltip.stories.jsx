@@ -10,6 +10,7 @@ import Badge from './Badge';
 export default {
   title: 'Components/Tooltip',
   component: Tooltip,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
