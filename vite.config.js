@@ -5,13 +5,17 @@ import react from '@vitejs/plugin-react';
 // https://vite.dev/config/
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
-import { playwright } from '@vitest/browser-playwright';
+
+//20260310 @storybook/addon-vitest 제거함
+//import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
+//import { playwright } from '@vitest/browser-playwright';
+
 const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [react()],
+
   //scss호출 시 최상위 강제 호출 /src/assets/scss/_bulid-set.scss (variables, mixin 만 존재함)
   css: {
     preprocessorOptions: {
@@ -28,6 +32,9 @@ export default defineConfig({
       '@': '/src'
     }
   },
+
+  //20260310 @storybook/addon-vitest 제거함
+ /*
   test: {
     projects: [{
       extends: true,
@@ -51,4 +58,5 @@ export default defineConfig({
       }
     }]
   }
+  */
 });

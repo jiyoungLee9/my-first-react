@@ -1,0 +1,43 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title="Design System files /Typography" />
+
+# Typography
+프로젝트의 일관된 텍스트 스타일을 위한 타이포그래피 시스템입니다. 
+모든 폰트 설정은 `_mixin.scss`의 `font-set()` 믹스인을 통해 적용하는 것을 원칙으로 합니다.
+
+---
+
+## 1. Font Family
+본 프로젝트는 가독성이 높은 **Pretendard** 서체를 기본으로 사용합니다.
+
+- **Primary:** `'Pretendard', 'Apple SD Gothic Neo', sans-serif`
+- **Weights:** 400 (Regular), 700 (Bold)
+
+## 2. Font Size & Sample
+`font-set()` 믹스인에 전달되는 인자값(`sm`, `default`, `lg`, `xl`)에 따른 실제 렌더링 크기입니다.
+
+<Typeset
+  fontSizes={[
+    '1.4rem',
+    '1.6rem',
+    '2.0rem',
+    '2.4rem'
+  ]}
+  fontWeight={400}
+  sampleText="가나다라마바사 ABCDEFG 12345 !@#$%"
+  fontFamily="'Pretendard', sans-serif"
+/>
+
+---
+
+## 3. Usage Guide (SCSS Mixin)
+퍼블리싱 작업 시 하드코딩된 `font-size`나 `line-height` 대신 아래와 같이 믹스인을 호출하여 사용하세요.
+
+### 기본 사용 (1.6rem / 2.4rem)
+```scss
+.text-small  { @include font-set(sm); }
+.text-large  { @include font-set(lg); }
+.text-xlarge { @include font-set(xl); }
+```
+````
