@@ -1,0 +1,79 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design System/Colors" />
+
+# Colors
+디자인 시스템의 핵심 색상 팔레트입니다. 
+모든 색상은 `_design_tokens.scss`에 정의된 변수를 참조하여 관리됩니다.
+
+---
+
+## 1. Global Tokens (Primitives)
+시스템의 원천이 되는 기초 색상입니다. 직접 컴포넌트에 사용하기보다 Semantic 토큰의 재료가 됩니다.
+
+<ColorPalette>
+  <ColorItem 
+    title="Slate (Grayscale)" 
+    subtitle="Neutral colors for text and backgrounds" 
+    colors={{ 
+      'Slate-900': '#0f172a', 
+      'Slate-500': '#64748b', 
+      'Slate-300': '#cbd5e1',
+      'Slate-100': '#f1f5f9' 
+    }} 
+  />
+  
+  <ColorItem 
+    title="Blue (Brand)" 
+    subtitle="Primary brand colors" 
+    colors={{ 
+      'Blue-500 (Main)': '#2d96ff', 
+      'Blue-600': '#0067ce',
+      'Blue-700': '#0064c9' 
+    }} 
+  />
+</ColorPalette>
+
+---
+
+## 2. Semantic Tokens (Meaningful)
+"어디에 쓰이는가"를 기준으로 정의된 색상입니다. 테마 변경 시 이 층의 연결만 수정합니다.
+
+<ColorPalette>
+  <ColorItem 
+    title="Text" 
+    subtitle="Typography colors" 
+    colors={{ 
+      '$text-primary': '#0f172a', 
+      '$text-secondary': '#64748b', 
+      '$text-error': '#e02535' 
+    }} 
+  />
+
+  <ColorItem 
+    title="Status" 
+    subtitle="Success, Error, Warning states" 
+    colors={{ 
+      'Success': '#10b981', 
+      'Error': '#f43f5e', 
+      'Warning': '#ea8b00' 
+    }} 
+  />
+</ColorPalette>
+
+---
+
+## 3. Usage Guide (SCSS)
+퍼블리싱 작업 시에는 아래와 같이 **Semantic 변수** 사용을 권장합니다.
+
+```scss
+// Good: 의미 있는 변수 사용 (유지보수 유리)
+.error-message {
+  color: $text-error;
+}
+
+// Bad: 절대적인 색상 값이나 기초 변수 직접 사용
+.error-message {
+  color: #e02535; // 또는 $ref-red-700
+}
+````
