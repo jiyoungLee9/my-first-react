@@ -70,6 +70,11 @@ caption.hdn { position:relative!important; text-indent:-100000px; font-size:0;} 
 .ta_c { text-align:center !important;}
 .ta_r { text-align:right !important;}
 
+.flex_ac { justify-content: center!important;}
+.flex_al { justify-content: flex-start!important;}
+.flex_ar { justify-content: flex-end!important;}
+
+
 //txt color
 $text-color-list: (
     'blue': $ref-blue-500,
