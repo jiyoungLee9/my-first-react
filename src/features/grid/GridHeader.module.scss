@@ -1,4 +1,41 @@
 /* features/grid/GridHeader.module.scss */
-.grid-Header {
-    
+
+
+//grid header 
+.grid_header_wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_info_area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap:0 0.6rem;
+
+    & > * {
+        @include font-set();
+    }
+    .info_strong {
+        font-weight: 600;
+    }
+}
+
+.header_sorting_area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap:0 0.6rem;
+    min-width:20.0rem;
+    & > button {
+        flex: none;
+        white-space : nowrap;
+    }
 }
