@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import styles from './PaginationButton.module.scss';
 
 
-const PaginationButton = (props) => {
-    return ( 
-        <div className={ `${styles.page_btn_wrap}${props.className ? ` ${props.className}` : ``}` } >
+const PaginationButton = ({ itemList = [], className = '' }) => { // 구조 분해 할당과 기본값 설정
+    
+    return (         
+        <div className={ `${styles.page_btn_wrap}${className ? ` ${className}` : ``}` } >
             {  
-                props.itemList.map( (item) => {
+                itemList.map((item) => {
                     return (
                         <button 
                             className={ `${styles.page_btn}${item.innerClassName ? ` ${styles[item.innerClassName]}` : ``}${item.isActive ? ` ${styles.is_active}` : ``} ` }  
@@ -50,7 +51,7 @@ PaginationButton.defaultProps = {
     itemList : [
         { label : '처음', value:'first', innerClassName : 'link_first', onClick: () => {} },
         { label : '이전', value:'prev', innerClassName : 'link_prev', onClick: () => {} },
-        { label : '1', value:'1', onClick: () => {},  isActive : true},
+        { label : '1', value:'1', onClick: () => {}, isActive : true},
         { label : '2', value:'2', onClick: () => {} },
         { label : '3', value:'3', onClick: () => {} },
         { label : '4', value:'4', onClick: () => {} },

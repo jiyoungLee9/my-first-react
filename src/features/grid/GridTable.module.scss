@@ -4,6 +4,7 @@
 
 .grid_table_container {
     position: relative;
+    margin-top:0.8rem;
 }
 
 .grid_table {
@@ -13,8 +14,8 @@
 
     & th,
     & td {
-        padding:0.6rem 0.6rem;
-        @include font-set(sm);
+        padding:0.8rem 0.6rem;
+        @include font-set();
         border-right:0.1rem solid $ref-slate-300;
         border-bottom:0.1rem solid $ref-slate-300;
     }

@@ -5,7 +5,7 @@ import Button from '../../components/Button';
 import styles from './GridHeader.module.scss';
 
 
-const GridHeader = ({ allNum, onPageSizeChange, className }) => {
+const GridHeader = ({ allNum, pageSize, onPageSizeChange, className }) => {
     
     const viewOption = [
         { label: '10개씩 보기', value: '10' },
@@ -24,7 +24,8 @@ const GridHeader = ({ allNum, onPageSizeChange, className }) => {
                     options = {viewOption}
                     placeholder = '목록 선택'
                     onChange={onPageSizeChange} // 부모에게 알림
-                    defaultValue="20"
+                    value={pageSize} // 부모의 상태와 동기화
+                    defaultValue="10"
                 />
                 <Button
                     label = "완료"
@@ -43,6 +44,7 @@ const GridHeader = ({ allNum, onPageSizeChange, className }) => {
 GridHeader.propTypes = {
     allNum : PropTypes.number.isRequired, //전체 갯수
     className: PropTypes.string,
+    pageSize : PropTypes.number, //페이지 목록 변화 후 최종감지 값
     onPageSizeChange : PropTypes.func, //페이지 목록 갯수 변화 감지용
 };
 
