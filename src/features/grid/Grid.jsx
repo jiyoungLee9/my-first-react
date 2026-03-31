@@ -66,7 +66,7 @@ const Grid = ({ initialData, columns }) => {
                 label: String(i), 
                 value: i, 
                 isActive: i === currentPage, // 현재 페이지면 활성화
-                onClick: () => handlePageChange(i, totalPages) 
+                onClick: () => handlePageChange(i, totalPages)
             });
         }
 

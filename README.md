@@ -14,13 +14,12 @@
 
 ### 작업방식
 - AI를 통한 학습계획 및 로드맵 수행<br />
-- 관련 학습정보모음 <a href="https://www.notion.so/React-2bb52a8b182d80958d76d8b39bc75c23" target="_blank" title="새창">학습정보모음 바로가기</a> <br/>
-- 관련 기록일지 <a href="https://jiyounglee9.github.io/react_learning_log/" target="_blank" title="새창">기록일지 바로가기</a> <br/>
+- 관련 학습정보모음 <a href="https://www.notion.so/React-2bb52a8b182d80958d76d8b39bc75c23" target="_blank" rel="noopener noreferrer" title="새창">학습정보모음 바로가기</a> <br/>
+- 관련 기록일지 <a href="https://jiyounglee9.github.io/react_learning_log/" target="_blank" rel="noopener noreferrer" title="새창">기록일지 바로가기</a> <br/>
 
 ### 작업기간
 - 2026년 1월 ~ 3월
 
 ### 작성자
-jack  
 <img src="./me_ico.png" alt="all about me" />
 
