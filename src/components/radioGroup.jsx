@@ -29,7 +29,7 @@ const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, ...rest }) =>
                             />
                             {/* itemList 갯수에 맞게 name, id 정의 */}
                             <label htmlFor={`${rest.id}${index}`} >
-                                <span>{item.label}</span>
+                                <span>{item.label}</span> 
                             </label>
                         </p>
                     );

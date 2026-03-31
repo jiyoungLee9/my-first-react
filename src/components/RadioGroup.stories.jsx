@@ -45,6 +45,6 @@ export const TypeVertical = {
     isVertical:"vertical",
     defaultValue: 'M',
     name:'selectB',
-    id:'selectB',      
+    id:'selectB',        
   },
 };
