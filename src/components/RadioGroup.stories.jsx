@@ -29,10 +29,8 @@ export const Default = {
         grpName: 'default RadioGroup',
         itemList: sampleItems,
         defaultValue: 'busan',
-        props : {
-            name:'selectA',
-            id:'selectA',
-        },   
+        name:'selectA',
+        id:'selectA', 
     },
 };
 
@@ -46,9 +44,7 @@ export const TypeVertical = {
     ],
     isVertical:"vertical",
     defaultValue: 'M',
-    props : {
-        name:'selectB',
-        id:'selectB',
-    },       
+    name:'selectB',
+    id:'selectB',      
   },
 };

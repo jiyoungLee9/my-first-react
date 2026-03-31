@@ -5,7 +5,7 @@ import styles from './radioGroup.module.scss';
 // UX진행
 // <p> 태그내 <input radio>로 다수 존재하는 group 정의 됨
 
-const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, props }) => {
+const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, ...rest }) => {
     return (
         // className 다중화 정의
         //  isVertical 값 true  들어오면 다중 class "type_vertical"을 추가로 작성해 줍니다.
@@ -20,15 +20,15 @@ const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, props }) => {
                     return (
                         <p className={styles.radioItem} key={item.value}>
                             <input type="radio" 
-                                name={props.name}
+                                {...rest}
                                 //id={props.id} //단건
-                                // itemList 갯수에 맞게 id 정의 : idValue0 , idValue1, idValue2 ... 방식                            
-                                id={`${props.id}${index}`}
+                                // itemList 갯수에 맞게 id 정의 : idValue0 , idValue1, idValue2 ... 방식
+                                id={`${rest.id}${index}`}
                                 value={item.value}                                
                                 defaultChecked={defaultValue === item.value}
                             />
                             {/* itemList 갯수에 맞게 name, id 정의 */}
-                            <label htmlFor={`${props.id}${index}`} >
+                            <label htmlFor={`${rest.id}${index}`} >
                                 <span>{item.label}</span>
                             </label>
                         </p>
@@ -47,7 +47,7 @@ const RadioGroup = ({ grpName, itemList, defaultValue, isVertical, props }) => {
 // - isVertical : 그룹가로형 구분 (true/false)
 // - className : 전역 스타일 확장용
 // - onChange : onchange 이벤트
-// props ====
+// ...reset (input요소들) ====
 // - name: 라디오 name
 // - id : 고유id값 // test 값일 경우 뒤에 연번이 붙는 방식으로 지정 
 // - disabled : 사용불가 여부 (true/false)
